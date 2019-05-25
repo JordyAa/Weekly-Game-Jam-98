@@ -5,6 +5,9 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+# JetBrains cache directory
+.idea/
+
 # Visual Studio cache directory
 .vs/
 
