@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
+using Debug = System.Diagnostics.Debug;
 
 public class Parallax : MonoBehaviour
 {
-    [SerializeField] private Vector3 moveDirection;
-    [SerializeField] private Transform[] bgs;
+    [SerializeField] private Vector3 moveDirection = Vector3.zero;
+    [SerializeField] private Transform[] bgs = new Transform[0];
 
     private Transform cam;
-    private const float camTop = 6f;
-    private const float camRight = 10f;
 
     private void Start()
     {
-        // ReSharper disable once PossibleNullReferenceException
+        Debug.Assert(Camera.main != null, "Camera.main != null");
         cam = Camera.main.transform;
     }
 
@@ -23,19 +22,22 @@ public class Parallax : MonoBehaviour
             bg.Translate(moveDirection * Time.deltaTime);
             
             Vector2 bgPos = bg.position;
-            if (bgPos.y - camPos.y - camTop < -30)
+            float yDiff = bgPos.y - camPos.y;
+            if (yDiff < -24f)
             {
                 bg.position += 40f * Vector3.up;
             }
-            else if (bgPos.y - camPos.y + camTop > 30)
+            else if (yDiff > 24f)
             {
                 bg.position += 40f * Vector3.down;
             }
-            else if (bgPos.x - camPos.x + camRight > 30)
+            
+            float xDiff = bgPos.x - camPos.x;
+            if (xDiff > 20f)
             {
                 bg.position += 40f * Vector3.left;
             }
-            else if (bgPos.x - camPos.x - camRight < -30)
+            else if (xDiff < -20f)
             {
                 bg.position += 40f * Vector3.right;
             }

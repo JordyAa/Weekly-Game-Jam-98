@@ -7,11 +7,10 @@ public class Tail : MonoBehaviour
     private Transform _target;
     public Transform target
     {
-        private get => _target;
         set
         {
             _target = value;
-            GetComponent<DistanceJoint2D>().connectedBody = target.GetComponent<Rigidbody2D>();
+            GetComponent<DistanceJoint2D>().connectedBody = _target.GetComponent<Rigidbody2D>();
             hasTarget = true;
         }
     }
@@ -22,11 +21,11 @@ public class Tail : MonoBehaviour
 
         Transform t = transform;
         Vector3 pos = t.position;
-        Vector3 targetPos = target.position;
+        Vector3 targetPos = _target.position;
 
         t.right = targetPos - pos;
 
         float angle = Mathf.Atan2(targetPos.y - pos.y, targetPos.x - pos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90));
+        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 90f + angle));
     }
 }
