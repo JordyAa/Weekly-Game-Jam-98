@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy 1 Head
       objectReference: {fileID: 0}
+    - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: rotateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1235175468156203748, guid: 3f643491acb47874bad88a4530412720,
         type: 3}
       propertyPath: m_Sprite
