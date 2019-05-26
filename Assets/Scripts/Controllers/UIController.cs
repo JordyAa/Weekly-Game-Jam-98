@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI sizeText = null;
+    [SerializeField] private TextMeshProUGUI lengthText = null;
     [SerializeField] private TextMeshProUGUI scoreText = null;
     [SerializeField] private GameObject restartText = null;
     [SerializeField] private GameObject continueText = null;
@@ -24,7 +24,7 @@ public class UIController : MonoBehaviour
 
     private void UpdateStats(Dragon player)
     {
-        sizeText.text = $"SIZE: {Mathf.Max(0, player.tailSize - 1)} / {player.maxTailSize - 1}";
+        lengthText.text = $"LENGTH: {Mathf.Max(0, player.tailSize - 1)} / {player.maxTailSize - 1}";
         scoreText.text = "SCORE: " + player.score;
     }
 
