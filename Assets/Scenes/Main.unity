@@ -154,7 +154,7 @@ Transform:
   - {fileID: 1217460142}
   - {fileID: 536162507}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &85226923
 GameObject:
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 85226926}
   - component: {fileID: 85226925}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,6 +696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 280370032}
+  - component: {fileID: 280370033}
   - component: {fileID: 280370031}
   m_Layer: 0
   m_Name: Player
@@ -718,15 +719,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tailPrefab: {fileID: 3611600840181861133, guid: 70b1103904726504493c2bbabcd1df97,
     type: 3}
-  tailGrowEffect: {fileID: 6498901979552875721, guid: bc6a7edd98078da4c922ee0985944e5d,
-    type: 3}
   tailSprite: {fileID: 5109667184224312197, guid: 6e107e071add33147904244d7aeb6ab0,
     type: 3}
   endSprite: {fileID: -7774726467381278736, guid: 6e107e071add33147904244d7aeb6ab0,
     type: 3}
-  sizeText: {fileID: 582395262}
-  scoreText: {fileID: 85226925}
-  upgradeText: {fileID: 724756371}
 --- !u!4 &280370032
 Transform:
   m_ObjectHideFlags: 0
@@ -743,6 +739,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &280370033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280370030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d1e93b688180f47be61885da6f273d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &311407513
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,6 +843,7 @@ GameObject:
   - component: {fileID: 393458957}
   - component: {fileID: 393458956}
   - component: {fileID: 393458955}
+  - component: {fileID: 393458959}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -924,6 +933,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &393458959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393458954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22bea6dc684d71d4f89e8f3a20247f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeText: {fileID: 582395262}
+  scoreText: {fileID: 85226925}
+  upgradeText: {fileID: 724756371}
 --- !u!1 &432668418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1349,7 @@ GameObject:
   - component: {fileID: 582395263}
   - component: {fileID: 582395262}
   m_Layer: 5
-  m_Name: Size
+  m_Name: Size Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1616,7 +1640,7 @@ GameObject:
   - component: {fileID: 724756374}
   - component: {fileID: 724756373}
   m_Layer: 5
-  m_Name: Upgrade
+  m_Name: Upgrade Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2428,6 +2452,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1258349810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1258349812}
+  - component: {fileID: 1258349811}
+  m_Layer: 0
+  m_Name: EffectController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1258349811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258349810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a51531c4d7ba54ba5ecf942071fbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tailGrowEffect: {fileID: 6498901979552875721, guid: bc6a7edd98078da4c922ee0985944e5d,
+    type: 3}
+  tailDestroyEffect: {fileID: 6498901979552875721, guid: bc6a7edd98078da4c922ee0985944e5d,
+    type: 3}
+--- !u!4 &1258349812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258349810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1314471312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,10 +3291,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 280370032}
     m_Modifications:
-    - target: {fileID: 1235175468156203750, guid: 3f643491acb47874bad88a4530412720,
+    - target: {fileID: 1235175468156203770, guid: 3f643491acb47874bad88a4530412720,
         type: 3}
-      propertyPath: m_Name
-      value: Head
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1235175468156203771, guid: 3f643491acb47874bad88a4530412720,
         type: 3}
@@ -3280,6 +3351,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1235175468156203750, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: m_Name
+      value: Head
+      objectReference: {fileID: 0}
     - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
         type: 3}
       propertyPath: movementSpeed
@@ -3299,11 +3375,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1235175468156203770, guid: 3f643491acb47874bad88a4530412720,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7638275252783268817, guid: 3f643491acb47874bad88a4530412720, type: 3}

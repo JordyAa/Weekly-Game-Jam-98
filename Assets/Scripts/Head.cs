@@ -6,18 +6,18 @@ public class Head : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 1f;
     [SerializeField] private float rotateSpeed = 1f;
-    
     [SerializeField] private float boostModifier = 1f;
     
-    private float boost = 0f;
-    private float rotate = 0f;
-    
-    private void Update()
+    public float boost { private get; set; }
+    public float rotate { private get; set; }
+
+    private Player player;
+
+    private void Start()
     {
-        rotate = Input.GetAxisRaw("Horizontal");
-        boost = Input.GetAxisRaw("Vertical");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
-    
+
     private void FixedUpdate()
     {
         if (Math.Abs(rotate) > Mathf.Epsilon)
@@ -28,19 +28,19 @@ public class Head : MonoBehaviour
         transform.Translate(0f, (movementSpeed + boost * boostModifier) * Time.deltaTime, 0f, Space.Self);
     }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Edible"))
+        {
+            player.GrowTail();
+        }
+    }
+
     public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Tail"))
         {
             SceneManager.LoadScene(0);
-        }
-    }
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Edible"))
-        {
-            Player.instance.GrowTail();
         }
     }
 }
