@@ -2,25 +2,28 @@
 
 public class InputController : MonoBehaviour
 {
-    private Head playerHead;
+    private Head head;
     private Player player;
+    private CombatController combat;
     
     private void Start()
     {
-        playerHead = GameObject.FindGameObjectWithTag("Head").GetComponent<Head>();
+        head = GameObject.FindGameObjectWithTag("Head").GetComponent<Head>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        combat = GameObject.FindGameObjectWithTag("Player").GetComponent<CombatController>();
     }
 
     private void Update()
     {
         UpdateHead();
         UpdatePlayerController();
+        UpdateCombatController();
     }
 
     private void UpdateHead()
     {
-        playerHead.rotate = Input.GetAxisRaw("Horizontal");
-        playerHead.boost = Input.GetAxisRaw("Vertical");
+        head.rotate = Input.GetAxisRaw("Horizontal");
+        head.boost = Input.GetAxisRaw("Vertical");
     }
 
     private void UpdatePlayerController()
@@ -35,6 +38,14 @@ public class InputController : MonoBehaviour
         if (player.tailSize > 10 && Input.GetKeyDown(KeyCode.Q))
         {
             StartCoroutine(player.DestroyTail());
+        }
+    }
+
+    private void UpdateCombatController()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            combat.ShootFireball(head.transform);
         }
     }
 }

@@ -8,7 +8,9 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="CameraFollow.cs" t="Include" />
+          <e p="CombatController.cs" t="Include" />
           <e p="EffectController.cs" t="Include" />
+          <e p="Fireball.cs" t="Include" />
           <e p="Head.cs" t="Include" />
           <e p="InputController.cs" t="Include" />
           <e p="Parallax.cs" t="Include" />
