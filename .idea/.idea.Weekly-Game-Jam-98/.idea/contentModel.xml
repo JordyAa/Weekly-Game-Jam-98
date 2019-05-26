@@ -19,9 +19,9 @@
           <e p="Enemy" t="Include">
             <e p="EnemyController.cs" t="Include" />
           </e>
+          <e p="FollowTarget.cs" t="Include" />
           <e p="Parallax.cs" t="Include" />
           <e p="Player" t="Include">
-            <e p="CameraFollow.cs" t="Include" />
             <e p="InputController.cs" t="Include" />
           </e>
           <e p="UIController.cs" t="Include" />

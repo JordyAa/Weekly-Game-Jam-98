@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class FollowTarget : MonoBehaviour
 {
+    [SerializeField] private float zPosition = 0f;
+    
     private Dragon player;
     private Transform target;
 
@@ -17,6 +19,6 @@ public class CameraFollow : MonoBehaviour
         if (player.isDead) return;
         
         Vector2 pos = target.position;
-        transform.position = new Vector3(pos.x, pos.y, -10f);
+        transform.position = new Vector3(pos.x, pos.y, zPosition);
     }
 }
