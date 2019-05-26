@@ -4,20 +4,22 @@ public class CombatController : MonoBehaviour
 {
     [SerializeField] private GameObject fireballPrefab = null;
     [SerializeField] private float fireballCooldown = 1f;
-    private bool fireballReady = true;
+    private float fireballCooldownCounter = 0f;
 
-    public void ShootFireball(Transform t)
+    private void Update()
     {
-        if (fireballReady)
+        if (fireballCooldownCounter > 0f)
         {
-            fireballReady = false;
-            Instantiate(fireballPrefab, t.position, t.rotation);
-            Invoke(nameof(SetFireballReady), fireballCooldown);
+            fireballCooldownCounter -= Time.deltaTime;
         }
     }
 
-    private void SetFireballReady()
+    public void ShootFireball(Transform t)
     {
-        fireballReady = true;
+        if (fireballCooldownCounter <= 0f)
+        {
+            fireballCooldownCounter = fireballCooldown;
+            Instantiate(fireballPrefab, t.position + 10f * Vector3.up, t.rotation);
+        }
     }
 }

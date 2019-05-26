@@ -7,6 +7,8 @@ TagManager:
   - Head
   - Tail
   - Edible
+  - Player Attack
+  - Enemy Attack
   layers:
   - Default
   - TransparentFX
@@ -50,9 +52,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Effects
+    uniqueID: 3806489865
+    locked: 0
   - name: Player
     uniqueID: 2100124117
     locked: 0
-  - name: Effects
+  - name: Player Effects
     uniqueID: 3471960009
     locked: 0

@@ -698,6 +698,7 @@ GameObject:
   - component: {fileID: 280370032}
   - component: {fileID: 280370033}
   - component: {fileID: 280370031}
+  - component: {fileID: 280370034}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -751,6 +752,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d1e93b688180f47be61885da6f273d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &280370034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280370030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ef7fccf0e5a3a46b431c762782ef2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireballPrefab: {fileID: 1623989807040659304, guid: 8c044e2cfa9030d458f72a4b85e858dd,
+    type: 3}
+  fireballCooldown: 1
 --- !u!1 &311407513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,7 +2499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tailGrowEffect: {fileID: 6498901979552875721, guid: bc6a7edd98078da4c922ee0985944e5d,
     type: 3}
-  tailDestroyEffect: {fileID: 6498901979552875721, guid: bc6a7edd98078da4c922ee0985944e5d,
+  tailDestroyEffect: {fileID: 6498901979552875721, guid: 949b8e516a973714980df709849bf68f,
     type: 3}
 --- !u!4 &1258349812
 Transform:
