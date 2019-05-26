@@ -20,7 +20,7 @@ public class UIController : MonoBehaviour
 
     private void UpdateStats(Dragon player)
     {
-        sizeText.text = $"SIZE: {player.tailSize - 1} / {player.maxTailSize - 1}";
+        sizeText.text = $"SIZE: {Mathf.Max(0, player.tailSize - 1)} / {player.maxTailSize - 1}";
         scoreText.text = "SCORE: " + player.score;
     }
 
