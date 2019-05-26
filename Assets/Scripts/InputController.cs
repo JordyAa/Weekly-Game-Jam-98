@@ -3,14 +3,14 @@
 public class InputController : MonoBehaviour
 {
     private Head head;
-    private Player player;
+    private Dragon player;
     private CombatController combat;
     
     private void Start()
     {
-        head = GameObject.FindGameObjectWithTag("Head").GetComponent<Head>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        combat = GameObject.FindGameObjectWithTag("Player").GetComponent<CombatController>();
+        head = GetComponentInChildren<Head>();
+        player = GetComponent<Dragon>();
+        combat = GetComponent<CombatController>();
     }
 
     private void Update()

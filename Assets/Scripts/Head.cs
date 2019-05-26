@@ -11,11 +11,11 @@ public class Head : MonoBehaviour
     public float boost { private get; set; }
     public float rotate { private get; set; }
 
-    private Player player;
+    private Dragon dragon;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        dragon = transform.parent.GetComponent<Dragon>();
     }
 
     private void FixedUpdate()
@@ -32,15 +32,7 @@ public class Head : MonoBehaviour
     {
         if (other.CompareTag("Edible"))
         {
-            player.GrowTail();
-        }
-    }
-
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Tail"))
-        {
-            SceneManager.LoadScene(0);
+            dragon.GrowTail();
         }
     }
 }

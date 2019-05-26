@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Head").transform;
+        target = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Head>().transform;
     }
 
     private void Update()

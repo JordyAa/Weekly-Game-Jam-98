@@ -2,26 +2,25 @@
 
 public class EffectController : MonoBehaviour
 {
-    [SerializeField] private GameObject tailGrowEffect = null;
-    [SerializeField] private GameObject tailDestroyEffect = null;
-
     private void Start()
     {
-        Player.OnGrowTail += TailGrowEffect;
-        Player.OnDestroyTail += TailDestroyEffect;
+        Dragon player = GameObject.FindGameObjectWithTag("Player").GetComponent<Dragon>();
+        
+        player.OnGrowTail += TailGrowEffect;
+        player.OnDestroyTail += TailDestroyEffect;
     }
     
-    private void TailGrowEffect(Player player)
+    private static void TailGrowEffect(Dragon dragon)
     {
-        Instantiate(tailGrowEffect,
-            player.tails[player.tailSize - 1].transform.position, 
+        Instantiate(dragon.tailGrowEffect,
+            dragon.tails[dragon.tailSize - 1].transform.position, 
             Quaternion.identity);
     }
 
-    private void TailDestroyEffect(Player player)
+    private static void TailDestroyEffect(Dragon dragon)
     {
-        Instantiate(tailDestroyEffect, 
-            player.tails[player.tailSize - 1].transform.position,
+        Instantiate(dragon.tailDestroyEffect, 
+            dragon.tails[dragon.tailSize - 1].transform.position,
             Quaternion.identity);
     }
 }

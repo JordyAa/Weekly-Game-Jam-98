@@ -9,25 +9,27 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        Player.OnGrowTail += UpdateStats;
-        Player.OnGrowTail += CheckUpgrade;
+        Dragon player = GameObject.FindGameObjectWithTag("Player").GetComponent<Dragon>();
+        
+        player.OnGrowTail += UpdateStats;
+        player.OnGrowTail += CheckUpgrade;
 
-        Player.OnDestroyTail += UpdateStats;
-        Player.OnDestroyTail += DisableUpgrade;
+        player.OnDestroyTail += UpdateStats;
+        player.OnDestroyTail += DisableUpgrade;
     }
 
-    private void UpdateStats(Player player)
+    private void UpdateStats(Dragon player)
     {
-        sizeText.text = $"SIZE: {player.tailSize - 1} / 15";
+        sizeText.text = $"SIZE: {player.tailSize - 1} / {player.maxTailSize - 1}";
         scoreText.text = "SCORE: " + player.score;
     }
 
-    private void CheckUpgrade(Player player)
+    private void CheckUpgrade(Dragon player)
     {
-        upgradeText.SetActive(player.tailSize > 10);
+        upgradeText.SetActive(player.tailSize > player.tailUpgradeSize);
     }
 
-    private void DisableUpgrade(Player player)
+    private void DisableUpgrade(Dragon player)
     {
         upgradeText.SetActive(false);
     }

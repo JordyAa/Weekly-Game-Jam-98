@@ -2,12 +2,21 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Dragon : MonoBehaviour
 {
+    public int maxTailSize = 16;
+    public int tailUpgradeSize = 10;
+    [SerializeField] private int startTailSize = 1;
+
+    [Header("Prefabs")]
     [SerializeField] private GameObject tailPrefab = null;
     [SerializeField] private Sprite tailSprite = null;
     [SerializeField] private Sprite endSprite = null;
 
+    [Header("Effects")]
+    public GameObject tailGrowEffect;
+    public GameObject tailDestroyEffect;
+    
     public int score { get; private set; }
     public int tailSize { get; private set; }
     public bool isUpgrading { get; private set; }
@@ -15,16 +24,31 @@ public class Player : MonoBehaviour
     private Head head;
     public Tail[] tails { get; private set; }
 
-    public static event Action<Player> OnGrowTail = delegate { };
-    public static event Action<Player> OnDestroyTail = delegate { };
+    public event Action<Dragon> OnGrowTail = delegate { };
+    public event Action<Dragon> OnDestroyTail = delegate { };
 
     private void Start()
     {
-        head = GameObject.FindGameObjectWithTag("Head").GetComponent<Head>();
+        head = GetComponentInChildren<Head>();
+        tails = new Tail[maxTailSize];
         
-        tails = new Tail[16];
-        tails[0] = GameObject.FindGameObjectWithTag("Tail").GetComponent<Tail>();
-        tails[0].target = head.transform;
+        for (int i = 0; i < startTailSize; i++)
+        {
+            AddTail(i);
+        }
+    }
+
+    private void AddTail(int index)
+    {
+        Transform target = index == 0 ? head.transform : tails[index - 1].transform;
+        
+        GameObject go = Instantiate(tailPrefab, target.position, Quaternion.identity);
+        go.name = $"Tail ({tailSize})";
+        go.transform.parent = transform;
+        
+        tails[tailSize] = go.GetComponent<Tail>();
+        tails[tailSize].target = target;
+        
         tailSize++;
     }
 
@@ -51,7 +75,7 @@ public class Player : MonoBehaviour
 
     public void DestroyTail()
     {
-        if (tailSize > 10)
+        if (tailSize > tailUpgradeSize)
         {
             isUpgrading = true;
             StartCoroutine(DestroyTailRoutine());
