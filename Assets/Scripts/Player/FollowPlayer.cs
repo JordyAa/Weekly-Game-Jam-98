@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FollowTarget : MonoBehaviour
+public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private float zPosition = 0f;
     

@@ -2,7 +2,8 @@
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float fovRadius = 1f;
+    [SerializeField] private float fovRadius = 5f;
+    [SerializeField] private float fovDistance = 10f;
 
     private Dragon player;
     private Transform target;
@@ -15,6 +16,7 @@ public class EnemyController : MonoBehaviour
         GameObject p = GameObject.FindGameObjectWithTag("Player");
         player = p.GetComponentInChildren<Dragon>();
         target = p.GetComponentInChildren<Head>().transform;
+        player.OnDeath += Deregister;
         
         head = GetComponentInChildren<Head>();
         combat = GetComponent<CombatController>();
@@ -33,11 +35,16 @@ public class EnemyController : MonoBehaviour
                           Vector3.Dot(dir, facing)) *
                       Mathf.Rad2Deg;
         
-        if (Mathf.Abs(angle) < fovRadius)
+        if (Mathf.Abs(angle) < fovRadius && Vector2.Distance(head.transform.position, target.position) < fovDistance)
         {
             combat.ShootFireball(head.transform);
         }
 
         head.rotate = angle > 0 ? 1f : -1f;
+    }
+
+    private void Deregister(Dragon dragon)
+    {
+        GetComponent<SpawnController>().spawned -= 1;
     }
 }

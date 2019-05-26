@@ -109,21 +109,20 @@ public class Dragon : MonoBehaviour
 
     private IEnumerator DestroyTailRoutine(int stopAt, float waitTime = 0.1f)
     {
-        for (int i = tailSize - 1; i >= stopAt; i--)
+        for (int i = tailSize - 1; i >= stopAt && i >= 0; i--)
         {
             yield return new WaitForSeconds(waitTime);
             
             Destroy(tails[i].gameObject);
             tails[i] = null;
+
+            if (i > 0)
+            {
+                tails[i - 1].GetComponent<SpriteRenderer>().sprite = endSprite;
+            }
             
             score++;
             tailSize--;
-
-            SpriteRenderer sr = tails[i]?.GetComponent<SpriteRenderer>();
-            if (sr != null)
-            {
-                sr.sprite = endSprite;
-            }
 
             OnDestroyTail(this);
         }

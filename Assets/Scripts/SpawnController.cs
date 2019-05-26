@@ -1,0 +1,30 @@
+﻿using UnityEngine;
+
+public class SpawnController : MonoBehaviour
+{
+    [SerializeField] private int maxSpawned = 4;
+    [HideInInspector] public int spawned;
+    
+    [SerializeField] private float timeBetweenSpawns = 1f;
+    [SerializeField] private float timeUntilSpawn = 3f;
+    
+    [SerializeField] private Transform[] spawnpoints = new Transform[0];
+    [SerializeField] private GameObject[] enemies = new GameObject[0];
+    
+    private void Update()
+    {
+        if (timeUntilSpawn > 0f)
+        {
+            timeUntilSpawn -= Time.deltaTime;
+        }
+        else if (spawned < maxSpawned)
+        {
+            Instantiate(enemies[Random.Range(0, enemies.Length)],
+                spawnpoints[Random.Range(0, spawnpoints.Length)].position,
+                Quaternion.identity);
+            
+            timeUntilSpawn = timeBetweenSpawns;
+            spawned++;
+        }
+    }
+}

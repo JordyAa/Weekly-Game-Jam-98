@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbaaea746f966f4ab52cf89770fbc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fovRadius: 10
+  fovRadius: 5
+  fovDistance: 10
 --- !u!114 &83906841091562290
 MonoBehaviour:
   m_ObjectHideFlags: 0
