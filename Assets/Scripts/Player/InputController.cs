@@ -32,11 +32,6 @@ public class InputController : MonoBehaviour
     {
         if (player.isUpgrading) return;
         
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            player.GrowTail();
-        }
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
             player.Upgrade();

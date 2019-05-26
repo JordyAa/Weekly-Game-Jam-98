@@ -35,4 +35,14 @@ public class Head : MonoBehaviour
         
         transform.Translate(0f, (movementSpeed + boost * boostModifier) * Time.deltaTime, 0f, Space.Self);
     }
+
+    private void OnDestroy()
+    {
+        if (dragon.dropOnDeath != null)
+        {
+            Instantiate(dragon.dropOnDeath,
+                dragon.head.transform.position,
+                Quaternion.identity);
+        }
+    }
 }

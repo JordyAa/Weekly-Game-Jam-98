@@ -74,6 +74,7 @@ MonoBehaviour:
     type: 3}
   deathEffect: {fileID: 6273613454123049747, guid: 797880908f4399944b61bb34c7a9d617,
     type: 3}
+  dropOnDeath: {fileID: 0}
 --- !u!114 &6252744935627314080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,11 +161,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
-        type: 3}
-      propertyPath: movementSpeed
-      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
         type: 3}

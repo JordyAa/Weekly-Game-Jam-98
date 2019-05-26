@@ -6,9 +6,7 @@ public class EffectController : MonoBehaviour
     {
         dragon.OnGrowTail += TailGrowEffect;
         dragon.OnDestroyTail += TailDestroyEffect;
-        
         dragon.OnDeath += DeathEffect;
-        dragon.OnDeath += DropEdible;
     }
     
     private static void TailGrowEffect(Dragon dragon)
@@ -32,15 +30,5 @@ public class EffectController : MonoBehaviour
         Instantiate(dragon.deathEffect, 
             dragon.head.transform.position,
             Quaternion.identity);
-    }
-
-    private static void DropEdible(Dragon dragon)
-    {
-        if (dragon.dropOnDeath != null)
-        {
-            Instantiate(dragon.dropOnDeath,
-                dragon.head.transform.position,
-                Quaternion.identity);
-        }
     }
 }

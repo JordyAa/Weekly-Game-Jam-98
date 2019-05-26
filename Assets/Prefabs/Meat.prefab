@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351987103040148625}
   - component: {fileID: 1711157159949353803}
+  - component: {fileID: 7808325456310830253}
   - component: {fileID: 7008892546714208391}
   - component: {fileID: 566020636701296438}
   m_Layer: 0
@@ -82,6 +83,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7808325456310830253
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6066414757933782287}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a5758af1a3dff44e851853a8d109857, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &7008892546714208391
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -110,5 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fbb1acc7fd55cb42b1e309b1fcd01ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateSpeedMin: 0.25
+  rotateSpeedMax: 0.75
   consumeEffect: {fileID: 673508648312645871, guid: ceb26c1240dee7f4b8af3d2191629935,
     type: 3}
