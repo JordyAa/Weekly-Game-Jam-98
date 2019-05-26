@@ -16,10 +16,18 @@ public class Head : MonoBehaviour
     private void Start()
     {
         dragon = transform.parent.GetComponent<Dragon>();
+        dragon.OnDeath += Destroy;
+    }
+
+    private static void Destroy(Dragon dragon)
+    {
+        Destroy(dragon.gameObject);
     }
 
     private void FixedUpdate()
     {
+        if (dragon.isDead) return;
+        
         if (Math.Abs(rotate) > Mathf.Epsilon)
         {
             transform.Rotate(0f, 0f, -rotate * rotateSpeed);
@@ -30,6 +38,8 @@ public class Head : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        if (dragon.isDead) return;
+        
         if (other.CompareTag("Edible"))
         {
             dragon.GrowTail();

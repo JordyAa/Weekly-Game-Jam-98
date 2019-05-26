@@ -72,6 +72,8 @@ MonoBehaviour:
     type: 3}
   tailDestroyEffect: {fileID: 3371622052586894669, guid: f34b55941fc9556469e1bf793d742a91,
     type: 3}
+  deathEffect: {fileID: 1929156531539304671, guid: a59b4517b9fde074bb22e0475ffb19ef,
+    type: 3}
 --- !u!114 &83906841091562287
 MonoBehaviour:
   m_ObjectHideFlags: 0

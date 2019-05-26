@@ -16,16 +16,29 @@ public class Dragon : MonoBehaviour
     [Header("Effects")]
     public GameObject tailGrowEffect;
     public GameObject tailDestroyEffect;
+    public GameObject deathEffect;
     
     public int score { get; private set; }
     public int tailSize { get; private set; }
     public bool isUpgrading { get; private set; }
     
-    private Head head;
+    public Head head { get; private set; }
     public Tail[] tails { get; private set; }
 
     public event Action<Dragon> OnGrowTail = delegate { };
     public event Action<Dragon> OnDestroyTail = delegate { };
+    public event Action<Dragon> OnDeath = delegate { };
+
+    private bool _isDead;
+    public bool isDead
+    {
+        get => _isDead;
+        private set
+        {
+            if (value == false) throw new Exception("Can't bring back to life!");
+            _isDead = true;
+        }
+    }
 
     private void Start()
     {
@@ -38,8 +51,11 @@ public class Dragon : MonoBehaviour
         }
         
         EffectController.Init(this);
+        OnDestroyTail += CheckDeath;
     }
 
+    
+    
     private void AddTail(int index)
     {
         Transform target = index == 0 ? head.transform : tails[index - 1].transform;
@@ -75,6 +91,8 @@ public class Dragon : MonoBehaviour
         OnGrowTail(this);
     }
 
+    
+    
     public void Upgrade()
     {
         if (tailSize > tailUpgradeSize)
@@ -111,5 +129,14 @@ public class Dragon : MonoBehaviour
         }
 
         isUpgrading = false;
+    }
+
+    private void CheckDeath(Dragon dragon)
+    {
+        if (tailSize <= 0)
+        {
+            isDead = true;
+            OnDeath(this);
+        }
     }
 }

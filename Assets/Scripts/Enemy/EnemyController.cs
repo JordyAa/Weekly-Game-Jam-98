@@ -3,7 +3,8 @@
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float fovRadius = 1f;
-    
+
+    private Dragon player;
     private Transform target;
 
     private Head head;
@@ -11,7 +12,9 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Head>().transform;
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+        player = p.GetComponentInChildren<Dragon>();
+        target = p.GetComponentInChildren<Head>().transform;
         
         head = GetComponentInChildren<Head>();
         combat = GetComponent<CombatController>();
@@ -19,6 +22,8 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        if (player.isDead) return;
+        
         Vector3 facing = head.transform.up;
         Vector3 dir = target.position - transform.position;
         
