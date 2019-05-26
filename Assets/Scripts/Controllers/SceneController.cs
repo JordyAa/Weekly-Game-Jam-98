@@ -12,6 +12,8 @@ public class SceneController : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<Dragon>();
         ui = FindObjectOfType<UIController>();
+
+        isPaused = false;
     }
 
     private void Update()
@@ -26,8 +28,8 @@ public class SceneController : MonoBehaviour
         {
             isPaused = false;
             Time.timeScale = 1f;
-            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
         }
     }
 

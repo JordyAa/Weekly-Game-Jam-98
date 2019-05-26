@@ -33,6 +33,8 @@ public class Dragon : MonoBehaviour
     public event Action<Dragon> OnDestroyTail = delegate { };
     public event Action<Dragon> OnDeath = delegate { };
 
+    private Coroutine destroyTailRoutine;
+    
     private bool _isDead;
     public bool isDead
     {
@@ -104,8 +106,13 @@ public class Dragon : MonoBehaviour
 
     public void DestroyTail(int stopAt)
     {
+        if (isUpgrading)
+        {
+            StopCoroutine(destroyTailRoutine);
+        }
+        
         isUpgrading = true;
-        StartCoroutine(DestroyTailRoutine(stopAt));
+        destroyTailRoutine = StartCoroutine(DestroyTailRoutine(stopAt));
     }
 
     private IEnumerator DestroyTailRoutine(int stopAt, float waitTime = 0.1f)
