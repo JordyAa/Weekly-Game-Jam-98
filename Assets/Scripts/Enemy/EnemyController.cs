@@ -43,8 +43,8 @@ public class EnemyController : MonoBehaviour
         head.rotate = angle > 0 ? 1f : -1f;
     }
 
-    private void Deregister(Dragon dragon)
+    private static void Deregister(Dragon dragon)
     {
-        GetComponent<SpawnController>().spawned -= 1;
+        GameObject.FindObjectOfType<SpawnController>().spawned -= 1;
     }
 }

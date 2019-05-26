@@ -11,8 +11,17 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private Transform[] spawnpoints = new Transform[0];
     [SerializeField] private GameObject[] enemies = new GameObject[0];
     
+    private Dragon player;
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<Dragon>();
+    }
+
     private void Update()
     {
+        if (player.isDead) return;
+        
         if (timeUntilSpawn > 0f)
         {
             timeUntilSpawn -= Time.deltaTime;

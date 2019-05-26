@@ -5,6 +5,7 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI sizeText = null;
     [SerializeField] private TextMeshProUGUI scoreText = null;
+    [SerializeField] private GameObject restartText = null;
     [SerializeField] private GameObject upgradeText = null;
 
     private void Start()
@@ -16,6 +17,8 @@ public class UIController : MonoBehaviour
 
         player.OnDestroyTail += UpdateStats;
         player.OnDestroyTail += DisableUpgrade;
+
+        player.OnDeath += EnableRestart;
     }
 
     private void UpdateStats(Dragon player)
@@ -29,6 +32,11 @@ public class UIController : MonoBehaviour
         upgradeText.SetActive(player.tailSize > player.tailUpgradeSize);
     }
 
+    private void EnableRestart(Dragon player)
+    {
+        restartText.SetActive(true);
+    }
+    
     private void DisableUpgrade(Dragon player)
     {
         upgradeText.SetActive(false);
