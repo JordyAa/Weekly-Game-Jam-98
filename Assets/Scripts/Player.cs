@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
 
     public void GrowTail()
     {
+        if (tailSize > 15) return;
+        
         Transform target = tails[tailSize - 1].transform;
         Vector2 pos = target.position;
         
@@ -47,10 +49,17 @@ public class Player : MonoBehaviour
         OnGrowTail(this);
     }
 
-    public IEnumerator DestroyTail(float waitTime = 0.1f)
+    public void DestroyTail()
     {
-        isUpgrading = true;
-        
+        if (tailSize > 10)
+        {
+            isUpgrading = true;
+            StartCoroutine(DestroyTailRoutine());
+        }
+    }
+    
+    private IEnumerator DestroyTailRoutine(float waitTime = 0.1f)
+    {
         for (int i = tailSize - 1; i > 0; i--)
         {
             yield return new WaitForSeconds(waitTime);
@@ -60,8 +69,8 @@ public class Player : MonoBehaviour
             
             tails[i - 1].GetComponent<SpriteRenderer>().sprite = endSprite;
 
-            tailSize--;
             score++;
+            tailSize--;
 
             OnDestroyTail(this);
         }

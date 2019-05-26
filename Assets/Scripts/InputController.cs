@@ -30,14 +30,14 @@ public class InputController : MonoBehaviour
     {
         if (player.isUpgrading) return;
         
-        if (player.tailSize < 16 && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             player.GrowTail();
         }
 
-        if (player.tailSize > 10 && Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            StartCoroutine(player.DestroyTail());
+            player.DestroyTail();
         }
     }
 

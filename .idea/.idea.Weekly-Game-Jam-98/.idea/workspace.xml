@@ -39,21 +39,40 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/InputController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+            <state relative-caret-position="480">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
               <folding>
-                <marker date="1558867106782" expanded="true" signature="64:1256" ph="{...}" />
-                <marker date="1558867106782" expanded="true" signature="183:451" ph="{...}" />
-                <marker date="1558867106782" expanded="true" signature="478:580" ph="{...}" />
-                <marker date="1558867106782" expanded="true" signature="611:728" ph="{...}" />
-                <marker date="1558867106782" expanded="true" signature="771:1084" ph="{...}" />
-                <marker date="1558867106782" expanded="true" signature="891:942" ph="{...}" />
-                <marker date="1558867106782" expanded="true" signature="1008:1078" ph="{...}" />
-                <marker date="1558867106782" expanded="true" signature="1127:1254" ph="{...}" />
-                <marker date="1558867106782" expanded="true" signature="1178:1248" ph="{...}" />
+                <marker date="1558867315557" expanded="true" signature="64:1192" ph="{...}" />
+                <marker date="1558867315557" expanded="true" signature="183:451" ph="{...}" />
+                <marker date="1558867315557" expanded="true" signature="478:580" ph="{...}" />
+                <marker date="1558867315557" expanded="true" signature="611:728" ph="{...}" />
+                <marker date="1558867315557" expanded="true" signature="771:1020" ph="{...}" />
+                <marker date="1558867315557" expanded="true" signature="867:918" ph="{...}" />
+                <marker date="1558867315557" expanded="true" signature="960:1014" ph="{...}" />
+                <marker date="1558867315557" expanded="true" signature="1063:1190" ph="{...}" />
+                <marker date="1558867315557" expanded="true" signature="1114:1184" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+              <folding>
+                <marker date="1558867402236" expanded="true" signature="6:58" ph="..." />
+                <marker date="1558867402236" expanded="true" signature="95:2160" ph="{...}" />
+                <marker date="1558867402236" expanded="true" signature="641:914" ph="{...}" />
+                <marker date="1558867402236" expanded="true" signature="942:1498" ph="{...}" />
+                <marker date="1558867402236" expanded="true" signature="1529:1670" ph="{...}" />
+                <marker date="1558867402236" expanded="true" signature="1562:1664" ph="{...}" />
+                <marker date="1558867402236" expanded="true" signature="1741:2158" ph="{...}" />
+                <marker date="1558867402236" expanded="true" signature="1794:2122" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -89,12 +108,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Parallax.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EffectController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Head.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CombatController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
       </list>
     </option>
   </component>
@@ -180,12 +199,12 @@
       <updated>1558792759256</updated>
       <workItem from="1558792764459" duration="572000" />
       <workItem from="1558793359094" duration="27321000" />
-      <workItem from="1558862567353" duration="4188000" />
+      <workItem from="1558862567353" duration="4482000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32081000" />
+    <option name="totallyTimeSpent" value="32375000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -324,21 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <marker date="1558865395178" expanded="true" signature="6:58" ph="..." />
-            <marker date="1558865395178" expanded="true" signature="95:1969" ph="{...}" />
-            <marker date="1558865395178" expanded="true" signature="641:914" ph="{...}" />
-            <marker date="1558865395178" expanded="true" signature="942:1454" ph="{...}" />
-            <marker date="1558865395178" expanded="true" signature="1513:1967" ph="{...}" />
-            <marker date="1558865395178" expanded="true" signature="1603:1931" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parallax.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
@@ -402,18 +406,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/InputController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+        <state relative-caret-position="480">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
-            <marker date="1558867106782" expanded="true" signature="64:1256" ph="{...}" />
-            <marker date="1558867106782" expanded="true" signature="183:451" ph="{...}" />
-            <marker date="1558867106782" expanded="true" signature="478:580" ph="{...}" />
-            <marker date="1558867106782" expanded="true" signature="611:728" ph="{...}" />
-            <marker date="1558867106782" expanded="true" signature="771:1084" ph="{...}" />
-            <marker date="1558867106782" expanded="true" signature="891:942" ph="{...}" />
-            <marker date="1558867106782" expanded="true" signature="1008:1078" ph="{...}" />
-            <marker date="1558867106782" expanded="true" signature="1127:1254" ph="{...}" />
-            <marker date="1558867106782" expanded="true" signature="1178:1248" ph="{...}" />
+            <marker date="1558867315557" expanded="true" signature="64:1192" ph="{...}" />
+            <marker date="1558867315557" expanded="true" signature="183:451" ph="{...}" />
+            <marker date="1558867315557" expanded="true" signature="478:580" ph="{...}" />
+            <marker date="1558867315557" expanded="true" signature="611:728" ph="{...}" />
+            <marker date="1558867315557" expanded="true" signature="771:1020" ph="{...}" />
+            <marker date="1558867315557" expanded="true" signature="867:918" ph="{...}" />
+            <marker date="1558867315557" expanded="true" signature="960:1014" ph="{...}" />
+            <marker date="1558867315557" expanded="true" signature="1063:1190" ph="{...}" />
+            <marker date="1558867315557" expanded="true" signature="1114:1184" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <marker date="1558867402236" expanded="true" signature="6:58" ph="..." />
+            <marker date="1558867402236" expanded="true" signature="95:2160" ph="{...}" />
+            <marker date="1558867402236" expanded="true" signature="641:914" ph="{...}" />
+            <marker date="1558867402236" expanded="true" signature="942:1498" ph="{...}" />
+            <marker date="1558867402236" expanded="true" signature="1529:1670" ph="{...}" />
+            <marker date="1558867402236" expanded="true" signature="1562:1664" ph="{...}" />
+            <marker date="1558867402236" expanded="true" signature="1741:2158" ph="{...}" />
+            <marker date="1558867402236" expanded="true" signature="1794:2122" ph="{...}" />
           </folding>
         </state>
       </provider>
