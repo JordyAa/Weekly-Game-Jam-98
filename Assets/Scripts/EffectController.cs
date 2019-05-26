@@ -2,12 +2,10 @@
 
 public class EffectController : MonoBehaviour
 {
-    private void Start()
+    public static void Init(Dragon dragon)
     {
-        Dragon player = GameObject.FindGameObjectWithTag("Player").GetComponent<Dragon>();
-        
-        player.OnGrowTail += TailGrowEffect;
-        player.OnDestroyTail += TailDestroyEffect;
+        dragon.OnGrowTail += TailGrowEffect;
+        dragon.OnDestroyTail += TailDestroyEffect;
     }
     
     private static void TailGrowEffect(Dragon dragon)
@@ -19,6 +17,8 @@ public class EffectController : MonoBehaviour
 
     private static void TailDestroyEffect(Dragon dragon)
     {
+        if (dragon.tailSize < 1) return;
+        
         Instantiate(dragon.tailDestroyEffect, 
             dragon.tails[dragon.tailSize - 1].transform.position,
             Quaternion.identity);

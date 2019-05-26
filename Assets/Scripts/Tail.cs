@@ -3,7 +3,6 @@
 public class Tail : MonoBehaviour
 {
     private bool hasTarget;
-    
     private Transform _target;
     public Transform target
     {

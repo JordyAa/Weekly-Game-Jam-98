@@ -3277,18 +3277,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 83906841091562290, guid: 3a606991a30f4dd4f8db86bdfb670b71,
-        type: 3}
-      propertyPath: tailGrowEffect
-      value: 
-      objectReference: {fileID: 9058726401577831156, guid: 53add17f155171344a2eb820faf5d798,
-        type: 3}
-    - target: {fileID: 83906841091562290, guid: 3a606991a30f4dd4f8db86bdfb670b71,
-        type: 3}
-      propertyPath: tailDestroyEffect
-      value: 
-      objectReference: {fileID: 3371622052586894669, guid: 9c4cead9659c93847b1429e02bcf3233,
-        type: 3}
     - target: {fileID: 77373394252317694, guid: 3a606991a30f4dd4f8db86bdfb670b71,
         type: 3}
       propertyPath: m_SortingLayer

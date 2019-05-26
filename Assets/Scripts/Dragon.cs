@@ -36,6 +36,8 @@ public class Dragon : MonoBehaviour
         {
             AddTail(i);
         }
+        
+        EffectController.Init(this);
     }
 
     private void AddTail(int index)
@@ -73,28 +75,37 @@ public class Dragon : MonoBehaviour
         OnGrowTail(this);
     }
 
-    public void DestroyTail()
+    public void Upgrade()
     {
         if (tailSize > tailUpgradeSize)
         {
-            isUpgrading = true;
-            StartCoroutine(DestroyTailRoutine());
+            DestroyTail(1);
         }
     }
-    
-    private IEnumerator DestroyTailRoutine(float waitTime = 0.1f)
+
+    public void DestroyTail(int stopAt)
     {
-        for (int i = tailSize - 1; i > 0; i--)
+        isUpgrading = true;
+        StartCoroutine(DestroyTailRoutine(stopAt));
+    }
+
+    private IEnumerator DestroyTailRoutine(int stopAt, float waitTime = 0.1f)
+    {
+        for (int i = tailSize - 1; i >= stopAt; i--)
         {
             yield return new WaitForSeconds(waitTime);
             
             Destroy(tails[i].gameObject);
             tails[i] = null;
             
-            tails[i - 1].GetComponent<SpriteRenderer>().sprite = endSprite;
-
             score++;
             tailSize--;
+
+            SpriteRenderer sr = tails[i]?.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                sr.sprite = endSprite;
+            }
 
             OnDestroyTail(this);
         }

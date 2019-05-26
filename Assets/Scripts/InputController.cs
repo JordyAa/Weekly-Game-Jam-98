@@ -37,7 +37,7 @@ public class InputController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            player.DestroyTail();
+            player.Upgrade();
         }
     }
 

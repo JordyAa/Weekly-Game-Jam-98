@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3611600840181861121}
   - component: {fileID: 3611600840181861134}
   m_Layer: 9
-  m_Name: Tail
+  m_Name: Player Tail
   m_TagString: Tail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2100124117
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -7774726467381278736, guid: 6e107e071add33147904244d7aeb6ab0,
     type: 3}
@@ -116,7 +116,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

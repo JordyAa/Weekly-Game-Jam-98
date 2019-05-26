@@ -68,8 +68,10 @@ MonoBehaviour:
     type: 3}
   endSprite: {fileID: 5984348410264326456, guid: 6e107e071add33147904244d7aeb6ab0,
     type: 3}
-  tailGrowEffect: {fileID: 0}
-  tailDestroyEffect: {fileID: 0}
+  tailGrowEffect: {fileID: 9058726401577831156, guid: 53add17f155171344a2eb820faf5d798,
+    type: 3}
+  tailDestroyEffect: {fileID: 3371622052586894669, guid: 9c4cead9659c93847b1429e02bcf3233,
+    type: 3}
 --- !u!114 &83906841091562287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 1623989807040659304, guid: 8c044e2cfa9030d458f72a4b85e858dd,
     type: 3}
-  fireballCooldown: 1
+  fireballCooldown: 2
 --- !u!1001 &3507274016632307371
 PrefabInstance:
   m_ObjectHideFlags: 0
