@@ -60,7 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTailSize: 16
   tailUpgradeSize: 10
-  startTailSize: 1
+  startTailSizeMin: 1
+  startTailSizeMax: 1
   tailPrefab: {fileID: 3611600840181861133, guid: 70b1103904726504493c2bbabcd1df97,
     type: 3}
   tailSprite: {fileID: 5109667184224312197, guid: 6e107e071add33147904244d7aeb6ab0,

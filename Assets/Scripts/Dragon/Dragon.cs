@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Dragon : MonoBehaviour
 {
     public int maxTailSize = 16;
     public int tailUpgradeSize = 10;
-    [SerializeField] private int startTailSize = 1;
+    
+    [SerializeField] private int startTailSizeMin = 1;
+    [SerializeField] private int startTailSizeMax = 10;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject tailPrefab = null;
@@ -44,8 +47,9 @@ public class Dragon : MonoBehaviour
     {
         head = GetComponentInChildren<Head>();
         tails = new Tail[maxTailSize];
-        
-        for (int i = 0; i < startTailSize; i++)
+
+        int size = Random.Range(startTailSizeMin, startTailSizeMax + 1);
+        for (int i = 0; i < size; i++)
         {
             AddTail(i);
         }

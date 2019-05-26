@@ -25,7 +25,8 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         head.rotate = 0f;
-        if (player.isDead) return;
+        
+        if (player.isDead || SceneController.isPaused) return;
         
         Vector3 facing = head.transform.up;
         Vector3 dir = target.position - transform.position;

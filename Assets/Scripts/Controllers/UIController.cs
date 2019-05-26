@@ -6,6 +6,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sizeText = null;
     [SerializeField] private TextMeshProUGUI scoreText = null;
     [SerializeField] private GameObject restartText = null;
+    [SerializeField] private GameObject continueText = null;
     [SerializeField] private GameObject upgradeText = null;
 
     private void Start()
@@ -35,6 +36,12 @@ public class UIController : MonoBehaviour
     private void EnableRestart(Dragon player)
     {
         restartText.SetActive(true);
+    }
+
+    public void TogglePause()
+    {
+        restartText.SetActive(SceneController.isPaused);
+        continueText.SetActive(SceneController.isPaused);
     }
     
     private void DisableUpgrade(Dragon player)

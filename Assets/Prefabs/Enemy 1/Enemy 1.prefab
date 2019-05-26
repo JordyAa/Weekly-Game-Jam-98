@@ -62,7 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTailSize: 10
   tailUpgradeSize: 10
-  startTailSize: 5
+  startTailSizeMin: 5
+  startTailSizeMax: 8
   tailPrefab: {fileID: 3717653156793699044, guid: e171d925000ace1478e76fda4ff5f876,
     type: 3}
   tailSprite: {fileID: -2564399675630157957, guid: 6e107e071add33147904244d7aeb6ab0,
@@ -89,7 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 1623989807040659304, guid: 8c044e2cfa9030d458f72a4b85e858dd,
     type: 3}
-  fireballCooldown: 2
+  fireballCooldown: 3
 --- !u!1001 &3507274016632307371
 PrefabInstance:
   m_ObjectHideFlags: 0

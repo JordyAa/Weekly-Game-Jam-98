@@ -15,7 +15,7 @@ public class InputController : MonoBehaviour
 
     private void Update()
     {
-        if (player.isDead) return;
+        if (player.isDead || SceneController.isPaused) return;
         
         UpdateHead();
         UpdatePlayerController();
