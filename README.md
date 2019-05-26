@@ -6,6 +6,7 @@ Theme: 'Tame a Dragon'
 * [Krita](https://krita.org/)
 
 # Acknowledgements
-* [Dragon Lances](https://opengameart.org/content/dragon-lances)
+* [Dragons](https://opengameart.org/content/dragon-lances)
+* [Meat](https://opengameart.org/content/3-meat-icons)
 * [Parallax Space Scene](https://opengameart.org/content/parallax-space-scene-seamlessly-scrolls-too)
-* [Nebula Music Futuristic](https://opengameart.org/content/nebula-music-futuristic)
+* [Nebula Music, Futuristic](https://opengameart.org/content/nebula-music-futuristic)

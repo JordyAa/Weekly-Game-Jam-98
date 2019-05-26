@@ -18,13 +18,14 @@
           <e p="Dragon" t="Include">
             <e p="CombatController.cs" t="Include" />
             <e p="Dragon.cs" t="Include" />
-            <e p="Fireball.cs" t="Include" />
             <e p="Head.cs" t="Include" />
             <e p="Tail.cs" t="Include" />
           </e>
+          <e p="Edible.cs" t="Include" />
           <e p="Enemy" t="Include">
             <e p="EnemyController.cs" t="Include" />
           </e>
+          <e p="Fireball.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="FollowPlayer.cs" t="Include" />
             <e p="InputController.cs" t="Include" />

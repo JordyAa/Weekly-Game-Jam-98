@@ -35,14 +35,4 @@ public class Head : MonoBehaviour
         
         transform.Translate(0f, (movementSpeed + boost * boostModifier) * Time.deltaTime, 0f, Space.Self);
     }
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (dragon.isDead) return;
-        
-        if (other.CompareTag("Edible"))
-        {
-            dragon.GrowTail();
-        }
-    }
 }

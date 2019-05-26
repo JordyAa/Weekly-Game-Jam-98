@@ -76,6 +76,8 @@ MonoBehaviour:
     type: 3}
   deathEffect: {fileID: 1929156531539304671, guid: a59b4517b9fde074bb22e0475ffb19ef,
     type: 3}
+  dropOnDeath: {fileID: 6066414757933782287, guid: f33a401a6e966bd4dbd96529f108c7d0,
+    type: 3}
 --- !u!114 &83906841091562287
 MonoBehaviour:
   m_ObjectHideFlags: 0

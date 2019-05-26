@@ -97,5 +97,10 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.49411768
       objectReference: {fileID: 0}
+    - target: {fileID: 5831965448056698933, guid: bc6a7edd98078da4c922ee0985944e5d,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc6a7edd98078da4c922ee0985944e5d, type: 3}

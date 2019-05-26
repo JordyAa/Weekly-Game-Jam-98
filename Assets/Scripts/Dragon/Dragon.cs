@@ -20,6 +20,7 @@ public class Dragon : MonoBehaviour
     public GameObject tailGrowEffect;
     public GameObject tailDestroyEffect;
     public GameObject deathEffect;
+    public GameObject dropOnDeath;
     
     public int score { get; private set; }
     public int tailSize { get; private set; }
@@ -58,8 +59,6 @@ public class Dragon : MonoBehaviour
         OnDestroyTail += CheckDeath;
     }
 
-    
-    
     private void AddTail(int index)
     {
         Transform target = index == 0 ? head.transform : tails[index - 1].transform;
@@ -95,8 +94,6 @@ public class Dragon : MonoBehaviour
         OnGrowTail(this);
     }
 
-    
-    
     public void Upgrade()
     {
         if (tailSize > tailUpgradeSize)
