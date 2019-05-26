@@ -8,3 +8,4 @@ Theme: 'Tame a Dragon'
 # Acknowledgements
 * [Dragon Lances](https://opengameart.org/content/dragon-lances)
 * [Parallax Space Scene](https://opengameart.org/content/parallax-space-scene-seamlessly-scrolls-too)
+* [Nebula Music Futuristic](https://opengameart.org/content/nebula-music-futuristic)
