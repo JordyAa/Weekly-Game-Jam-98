@@ -22,7 +22,7 @@ public class Tail : MonoBehaviour
 
     private static void DropEdible(Dragon dragon)
     {
-        if (dragon.tails.Count > 0 && dragon.dropOnDeath != null && Random.Range(0f, 1f) > 0.8f)
+        if (dragon.tails.Count > 0 && dragon.dropOnDeath != null && Random.Range(0f, 1f) > 0.9f)
         {
             Instantiate(dragon.dropOnDeath,
                 dragon.tails[dragon.tails.Count - 1].transform.position,

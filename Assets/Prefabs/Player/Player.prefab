@@ -58,8 +58,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d74586a5484fecb83bd5f9d81cd486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTailSize: 15
-  tailUpgradeSize: 10
   startTailSizeMin: 1
   startTailSizeMax: 1
   tailPrefab: {fileID: 3611600840181861133, guid: 70b1103904726504493c2bbabcd1df97,
@@ -74,7 +72,9 @@ MonoBehaviour:
     type: 3}
   deathEffect: {fileID: 6273613454123049747, guid: 797880908f4399944b61bb34c7a9d617,
     type: 3}
-  dropOnDeath: {fileID: 0}
+  dropOnDeath: {fileID: 6066414757933782287, guid: f33a401a6e966bd4dbd96529f108c7d0,
+    type: 3}
+  tails: []
 --- !u!114 &6252744935627314080
 MonoBehaviour:
   m_ObjectHideFlags: 0

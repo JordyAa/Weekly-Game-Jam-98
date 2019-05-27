@@ -23,13 +23,7 @@ public class Dragon : MonoBehaviour
     private bool isDestroying { get; set; }
     
     public Head head { get; private set; }
-    public List<Tail> tails = new List<Tail>();
-
-    public event Action<Dragon> OnGrowTail = delegate { };
-    public event Action<Dragon> OnDestroyTail = delegate { };
-    public event Action<Dragon> OnDeath = delegate { };
-
-    private Coroutine destroyTailRoutine;
+    [HideInInspector] public List<Tail> tails = new List<Tail>();
     
     private bool _isDead;
     public bool isDead
@@ -41,6 +35,12 @@ public class Dragon : MonoBehaviour
             _isDead = true;
         }
     }
+
+    public event Action<Dragon> OnGrowTail = delegate { };
+    public event Action<Dragon> OnDestroyTail = delegate { };
+    public event Action<Dragon> OnDeath = delegate { };
+
+    private Coroutine destroyTailRoutine;
 
     private void Start()
     {
@@ -90,7 +90,8 @@ public class Dragon : MonoBehaviour
 
     private IEnumerator DestroyTailRoutine(int stopAt)
     {
-        for (int i = tails.Count - 1; i >= stopAt && i >= 0; i--)
+        stopAt = Mathf.Max(0, stopAt);
+        for (int i = tails.Count - 1; i >= stopAt; i--)
         {
             yield return new WaitForSeconds(0.1f);
             
