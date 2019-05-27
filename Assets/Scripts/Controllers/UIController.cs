@@ -22,7 +22,7 @@ public class UIController : MonoBehaviour
     private void UpdateStats(Dragon player)
     {
         lengthText.text = "LENGTH: " + player.tails.Count;
-        highScoreText.text = "HIGH SCORE: " + Player.highScore;
+        highScoreText.text = "HIGH SCORE: " + StatsController.highScore;
     }
 
     private void EnableRestart(Dragon player)

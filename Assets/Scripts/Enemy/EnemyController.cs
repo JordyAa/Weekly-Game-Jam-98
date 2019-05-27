@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
         GameObject p = GameObject.FindGameObjectWithTag("Player");
         target = p.transform.GetChild(0);
         player = p.GetComponent<Dragon>();
+
         player.OnDeath += Deregister;
         
         head = GetComponentInChildren<Head>();

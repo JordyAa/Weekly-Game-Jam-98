@@ -8,12 +8,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        int highScore = PlayerPrefs.GetInt("highScore");
-        if (highScore > 0)
-        {
-            highScoreText.text = "HIGH SCORE: " + highScore;
-            highScoreText.enabled = true;
-        }
+        highScoreText.text = "HIGH SCORE: " + StatsController.highScore;
     }
 
     public void StartGame()

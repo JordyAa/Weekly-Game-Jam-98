@@ -90,12 +90,17 @@ PrefabInstance:
     - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
         type: 3}
       propertyPath: rotateSpeedMax
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
         type: 3}
       propertyPath: boostModifier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: rotateSpeedMin
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1235175468156203748, guid: 3f643491acb47874bad88a4530412720,
         type: 3}
