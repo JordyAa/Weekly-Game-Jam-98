@@ -49,11 +49,11 @@ public class Dragon : MonoBehaviour
 
         for (int i = 0; i < Random.Range(startTailSizeMin, startTailSizeMax + 1); i++)
         {
-            GrowTail();
+            GrowTail(true);
         }
     }
 
-    public void GrowTail()
+    public void GrowTail(bool initial = false)
     {
         Transform target;
         if (tails.Count == 0)
@@ -74,7 +74,10 @@ public class Dragon : MonoBehaviour
         tail.target = target;
         tails.Add(tail);
 
-        OnGrowTail(this);
+        if (initial == false)
+        {
+            OnGrowTail(this);
+        }
     }
 
     public void DestroyTail(int stopAt)
@@ -95,6 +98,7 @@ public class Dragon : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
             
+            tails[i].DropEdible(this);
             Destroy(tails[i].gameObject);
             tails.RemoveAt(i);
 

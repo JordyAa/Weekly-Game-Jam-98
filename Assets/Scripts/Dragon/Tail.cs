@@ -15,17 +15,16 @@ public class Tail : MonoBehaviour
             
             _target = value;
             GetComponent<DistanceJoint2D>().connectedBody = _target.GetComponent<Rigidbody2D>();
-            _target.transform.parent.GetComponent<Dragon>().OnDestroyTail += DropEdible;
             hasTarget = true;
         }
     }
 
-    private static void DropEdible(Dragon dragon)
+    public void DropEdible(Dragon dragon)
     {
-        if (dragon.tails.Count > 0 && dragon.dropOnDeath != null && Random.Range(0f, 1f) > 0.9f)
+        if (dragon.dropOnDeath != null && Random.Range(0f, 1f) > 0.9f)
         {
             Instantiate(dragon.dropOnDeath,
-                dragon.tails[dragon.tails.Count - 1].transform.position,
+                transform.position,
                 Quaternion.identity);
         }
     }

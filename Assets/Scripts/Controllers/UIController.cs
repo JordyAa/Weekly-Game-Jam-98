@@ -4,8 +4,9 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI lengthText = null;
-    [SerializeField] private GameObject restartText = null;
     [SerializeField] private GameObject continueText = null;
+    [SerializeField] private GameObject restartText = null;
+    [SerializeField] private GameObject menuText = null;
 
     private void Start()
     {
@@ -24,11 +25,13 @@ public class UIController : MonoBehaviour
     private void EnableRestart(Dragon player)
     {
         restartText.SetActive(true);
+        menuText.SetActive(true);
     }
 
     public void TogglePause()
     {
         restartText.SetActive(SceneController.isPaused);
         continueText.SetActive(SceneController.isPaused);
+        menuText.SetActive(SceneController.isPaused);
     }
 }

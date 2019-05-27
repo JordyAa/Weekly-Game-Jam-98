@@ -21,21 +21,20 @@ public class SceneController : MonoBehaviour
         if (player.isDead == false && Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
-            ui.TogglePause();
-        }
-        
-        if ((player.isDead || isPaused) && Input.GetKeyDown(KeyCode.Space))
-        {
-            isPaused = false;
-            Time.timeScale = 1f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            
         }
     }
 
-    private static void TogglePause()
+    public void TogglePause()
     {
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0f : 1f;
+        ui.TogglePause();
+    }
+
+    public void LoadScene(int buildIndex)
+    {
+        isPaused = false;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(buildIndex);
     }
 }

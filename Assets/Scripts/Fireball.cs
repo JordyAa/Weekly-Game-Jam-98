@@ -1,29 +1,25 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 1f;
     [SerializeField] private float lifeTime = 1f;
 
-    private float enableColliderCooldown = 0.25f;
-    private bool colliderEnabled;
+    private string _source = "";
+    public string source
+    {
+        private get => _source;
+        set
+        {
+            if (_source != "") throw new Exception("Source already defined!");
+            _source = value;
+        }
+    }
 
     private void Start()
     {
         Destroy(gameObject, lifeTime);
-    }
-
-    private void Update()
-    {
-        if (colliderEnabled) return;
-        
-        enableColliderCooldown -= Time.deltaTime;
-        
-        if (enableColliderCooldown < 0f)
-        {
-            GetComponent<Collider2D>().enabled = true;
-            colliderEnabled = true;
-        }
     }
 
     private void FixedUpdate()
@@ -33,6 +29,8 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.transform.parent.name == source) return;
+        
         if (other.CompareTag("Head"))
         {
             other.transform.parent.GetComponent<Dragon>().DestroyTail(0);

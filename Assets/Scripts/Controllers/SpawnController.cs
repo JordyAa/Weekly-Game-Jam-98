@@ -29,8 +29,9 @@ public class SpawnController : MonoBehaviour
         else if (spawned < maxSpawned)
         {
             Instantiate(enemies[Random.Range(0, enemies.Length)],
-                spawnpoints[Random.Range(0, spawnpoints.Length)].position,
-                Quaternion.identity);
+                    spawnpoints[Random.Range(0, spawnpoints.Length)].position,
+                    Quaternion.identity)
+                .transform.name = $"Enemy ({spawned})";
             
             timeUntilSpawn = timeBetweenSpawns;
             spawned++;
