@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using Debug = System.Diagnostics.Debug;
 
 public class Parallax : MonoBehaviour
@@ -8,12 +9,17 @@ public class Parallax : MonoBehaviour
 
     private Transform cam;
 
-    private void Start()
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += FindCamera;
+    }
+
+    private void FindCamera(Scene scene, LoadSceneMode mode)
     {
         Debug.Assert(Camera.main != null, "Camera.main != null");
         cam = Camera.main.transform;
     }
-
+    
     private void Update()
     {
         Vector2 camPos = cam.position;

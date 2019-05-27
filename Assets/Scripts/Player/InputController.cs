@@ -17,29 +17,9 @@ public class InputController : MonoBehaviour
     {
         if (player.isDead || SceneController.isPaused) return;
         
-        UpdateHead();
-        UpdatePlayerController();
-        UpdateCombatController();
-    }
-
-    private void UpdateHead()
-    {
         head.rotate = Input.GetAxisRaw("Horizontal");
         head.boost = Input.GetAxisRaw("Vertical");
-    }
-
-    private void UpdatePlayerController()
-    {
-        if (player.isUpgrading) return;
         
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            player.Upgrade();
-        }
-    }
-
-    private void UpdateCombatController()
-    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             combat.ShootFireball(head.transform);

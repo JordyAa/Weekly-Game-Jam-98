@@ -15,7 +15,7 @@ public class SpawnController : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Dragon>();
+        player = GameObject.Find("Player").GetComponent<Dragon>();
     }
 
     private void Update()

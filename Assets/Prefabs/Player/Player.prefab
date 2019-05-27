@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d74586a5484fecb83bd5f9d81cd486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTailSize: 16
+  maxTailSize: 15
   tailUpgradeSize: 10
   startTailSizeMin: 1
   startTailSizeMax: 1

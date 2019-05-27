@@ -19,7 +19,7 @@ public class CombatController : MonoBehaviour
         if (fireballCooldownCounter <= 0f)
         {
             fireballCooldownCounter = fireballCooldown;
-            Instantiate(fireballPrefab, t.position + 0.5f * t.up, t.rotation);
+            Instantiate(fireballPrefab, t.position + 0.75f * t.up, t.rotation);
         }
     }
 }

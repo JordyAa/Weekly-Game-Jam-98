@@ -1,13 +1,11 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Dragon : MonoBehaviour
 {
-    public int maxTailSize = 16;
-    public int tailUpgradeSize = 10;
-    
     [SerializeField] private int startTailSizeMin = 1;
     [SerializeField] private int startTailSizeMax = 10;
 
@@ -22,12 +20,10 @@ public class Dragon : MonoBehaviour
     public GameObject deathEffect;
     public GameObject dropOnDeath;
     
-    public int score { get; private set; }
-    public int tailSize { get; private set; }
-    public bool isUpgrading { get; private set; }
+    private bool isDestroying { get; set; }
     
     public Head head { get; private set; }
-    public Tail[] tails { get; private set; }
+    public List<Tail> tails = new List<Tail>();
 
     public event Action<Dragon> OnGrowTail = delegate { };
     public event Action<Dragon> OnDestroyTail = delegate { };
@@ -41,109 +37,81 @@ public class Dragon : MonoBehaviour
         get => _isDead;
         private set
         {
-            if (value == false) throw new Exception("Can't bring back to life!");
+            if (value == false) throw new Exception("Can't bring dragon back to life!");
             _isDead = true;
         }
     }
 
     private void Start()
     {
-        head = GetComponentInChildren<Head>();
-        tails = new Tail[maxTailSize];
-
-        int size = Random.Range(startTailSizeMin, startTailSizeMax + 1);
-        for (int i = 0; i < size; i++)
-        {
-            AddTail(i);
-        }
-        
         EffectController.Init(this);
-        OnDestroyTail += CheckDeath;
-    }
+        head = GetComponentInChildren<Head>();
 
-    private void AddTail(int index)
-    {
-        Transform target = index == 0 ? head.transform : tails[index - 1].transform;
-        
-        GameObject go = Instantiate(tailPrefab, target.position, Quaternion.identity);
-        go.name = $"Tail ({tailSize})";
-        go.transform.parent = transform;
-        
-        tails[tailSize] = go.GetComponent<Tail>();
-        tails[tailSize].target = target;
-        
-        tailSize++;
+        for (int i = 0; i < Random.Range(startTailSizeMin, startTailSizeMax + 1); i++)
+        {
+            GrowTail();
+        }
     }
 
     public void GrowTail()
     {
-        if (tailSize > 15) return;
+        Transform target;
+        if (tails.Count == 0)
+        {
+            target = head.transform;
+        }
+        else
+        {
+            target = tails[tails.Count - 1].transform;
+            tails[tails.Count - 1].GetComponent<SpriteRenderer>().sprite = tailSprite;
+        }
         
-        Transform target = tails[tailSize - 1].transform;
-        Vector2 pos = target.position;
-        
-        tails[tailSize - 1].GetComponent<SpriteRenderer>().sprite = tailSprite;
-
-        GameObject go = Instantiate(tailPrefab, pos, Quaternion.identity);
-        go.name = $"Tail ({tailSize})";
+        GameObject go = Instantiate(tailPrefab, target.position, Quaternion.identity);
+        go.name = $"Tail ({tails.Count})";
         go.transform.parent = transform;
-        
-        tails[tailSize] = go.GetComponent<Tail>();
-        tails[tailSize].target = target;
-        
-        tailSize++;
+
+        Tail tail = go.GetComponent<Tail>();
+        tail.target = target;
+        tails.Add(tail);
 
         OnGrowTail(this);
     }
 
-    public void Upgrade()
-    {
-        if (tailSize > tailUpgradeSize)
-        {
-            DestroyTail(1);
-        }
-    }
-
     public void DestroyTail(int stopAt)
     {
-        if (isUpgrading)
+        if (isDestroying)
         {
             StopCoroutine(destroyTailRoutine);
         }
         
-        isUpgrading = true;
+        isDestroying = true;
         destroyTailRoutine = StartCoroutine(DestroyTailRoutine(stopAt));
     }
 
-    private IEnumerator DestroyTailRoutine(int stopAt, float waitTime = 0.1f)
+    private IEnumerator DestroyTailRoutine(int stopAt)
     {
-        for (int i = tailSize - 1; i >= stopAt && i >= 0; i--)
+        for (int i = tails.Count - 1; i >= stopAt && i >= 0; i--)
         {
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(0.1f);
             
             Destroy(tails[i].gameObject);
-            tails[i] = null;
+            tails.RemoveAt(i);
 
             if (i > 0)
             {
                 tails[i - 1].GetComponent<SpriteRenderer>().sprite = endSprite;
             }
-            
-            score++;
-            tailSize--;
 
             OnDestroyTail(this);
         }
-
-        isUpgrading = false;
-    }
-
-    private void CheckDeath(Dragon dragon)
-    {
-        if (tailSize <= 0)
+        
+        if (tails.Count <= 0)
         {
             isDead = true;
             OnDeath(this);
         }
+        
+        isDestroying = false;
+        
     }
 }

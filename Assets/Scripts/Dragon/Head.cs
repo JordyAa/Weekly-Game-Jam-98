@@ -32,7 +32,8 @@ public class Head : MonoBehaviour
 
     private static void Destroy(Dragon dragon)
     {
-        Destroy(dragon.gameObject);
+        GameObject.Find("SpawnController").GetComponent<SpawnController>().spawned--;
+        Destroy(dragon.gameObject, 0.01f);
     }
 
     private void FixedUpdate()
