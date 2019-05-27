@@ -96,7 +96,7 @@ public class Dragon : MonoBehaviour
         stopAt = Mathf.Max(0, stopAt);
         for (int i = tails.Count - 1; i >= stopAt; i--)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.08f);
             
             tails[i].DropEdible(this);
             Destroy(tails[i].gameObject);

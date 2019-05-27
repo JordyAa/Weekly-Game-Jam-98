@@ -4,6 +4,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float fovRadius = 5f;
     [SerializeField] private float fovDistance = 10f;
+    [SerializeField] private float maxDistance = 30f;
 
     private Transform target;
     private Dragon player;
@@ -31,15 +32,24 @@ public class EnemyController : MonoBehaviour
         }
 
         Transform t = head.transform;
+        Vector3 tPos = t.position;
+        Vector3 targetPos = target.position;
         Vector3 facing = t.up;
-        Vector3 dir = target.position - t.position;
+        Vector3 dir = targetPos - tPos;
+
+        float distance = Vector2.Distance(tPos, targetPos);
+        if (distance > maxDistance)
+        {
+            Deregister();
+            Destroy(gameObject);
+        }
         
         float angle = Mathf.Atan2(
                           Vector3.Dot(Vector3.forward, Vector3.Cross(dir, facing)),
                           Vector3.Dot(dir, facing)) *
                       Mathf.Rad2Deg;
         
-        if (Mathf.Abs(angle) < fovRadius && Vector2.Distance(t.position, target.position) < fovDistance)
+        if (Mathf.Abs(angle) < fovRadius && distance < fovDistance)
         {
             combat.ShootFireball(t);
         }
@@ -47,7 +57,7 @@ public class EnemyController : MonoBehaviour
         head.rotate = angle > 0 ? 1f : -1f;
     }
 
-    private static void Deregister(Dragon dragon)
+    private static void Deregister(Dragon dragon = null)
     {
         FindObjectOfType<SpawnController>().spawned -= 1;
     }

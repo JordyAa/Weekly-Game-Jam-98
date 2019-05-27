@@ -4,6 +4,7 @@ public class SpawnController : MonoBehaviour
 {
     [SerializeField] private int maxSpawned = 4;
     [HideInInspector] public int spawned;
+    private int total;
     
     [SerializeField] private float timeBetweenSpawns = 1f;
     [SerializeField] private float timeUntilSpawn = 3f;
@@ -31,10 +32,11 @@ public class SpawnController : MonoBehaviour
             Instantiate(enemies[Random.Range(0, enemies.Length)],
                     spawnpoints[Random.Range(0, spawnpoints.Length)].position,
                     Quaternion.identity)
-                .transform.name = $"Enemy ({spawned})";
+                .transform.name = $"Enemy ({total})";
             
             timeUntilSpawn = timeBetweenSpawns;
             spawned++;
+            total++;
         }
     }
 }
