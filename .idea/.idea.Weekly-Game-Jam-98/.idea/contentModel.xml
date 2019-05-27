@@ -31,6 +31,7 @@
           <e p="Player" t="Include">
             <e p="FollowPlayer.cs" t="Include" />
             <e p="InputController.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

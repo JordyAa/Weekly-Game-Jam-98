@@ -20,11 +20,11 @@ public class Dragon : MonoBehaviour
     public GameObject deathEffect;
     public GameObject dropOnDeath;
     
-    private bool isDestroying { get; set; }
     
     public Head head { get; private set; }
     public readonly List<Tail> tails = new List<Tail>();
-    
+
+    private bool isDestroying;
     private bool _isDead;
     public bool isDead
     {
@@ -39,7 +39,6 @@ public class Dragon : MonoBehaviour
     public event Action<Dragon> OnGrowTail = delegate { };
     public event Action<Dragon> OnDestroyTail = delegate { };
     public event Action<Dragon> OnDeath = delegate { };
-
     private Coroutine destroyTailRoutine;
 
     private void Start()
@@ -47,7 +46,8 @@ public class Dragon : MonoBehaviour
         EffectController.Init(this);
         head = GetComponentInChildren<Head>();
 
-        for (int i = 0; i < Random.Range(startTailSizeMin, startTailSizeMax + 1); i++)
+        int size = Random.Range(startTailSizeMin, startTailSizeMax + 1);
+        for (int i = 0; i < size; i++)
         {
             GrowTail(true);
         }
