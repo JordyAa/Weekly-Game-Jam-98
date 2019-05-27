@@ -22,14 +22,14 @@ public class Tail : MonoBehaviour
 
     private static void DropEdible(Dragon dragon)
     {
-        if (dragon.tails.Count > 0 && dragon.dropOnDeath != null && Random.Range(0f, 1f) > 0.6f)
+        if (dragon.tails.Count > 0 && dragon.dropOnDeath != null && Random.Range(0f, 1f) > 0.8f)
         {
             Instantiate(dragon.dropOnDeath,
                 dragon.tails[dragon.tails.Count - 1].transform.position,
                 Quaternion.identity);
         }
     }
-
+    
     private void Update()
     {
         if (hasTarget == false) return;

@@ -22,7 +22,7 @@ public class Edible : MonoBehaviour
     {
         if (other.transform.parent.CompareTag("Player"))
         {
-            GameObject.FindWithTag("Player").GetComponent<Dragon>().GrowTail();
+            GameObject.Find("Player").GetComponent<Dragon>().GrowTail();
             Instantiate(consumeEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
