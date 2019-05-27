@@ -1,11 +1,17 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class Head : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 1f;
-    [SerializeField] private float rotateSpeed = 1f;
+    [SerializeField] private float movementSpeedMin = 1f;
+    [SerializeField] private float movementSpeedMax = 1f;
+    private float movementSpeed;
+    
+    [SerializeField] private float rotateSpeedMin = 1f;
+    [SerializeField] private float rotateSpeedMax = 1f;
+    private float rotateSpeed;
+    
     [SerializeField] private float boostModifier = 1f;
 
     public float boost { private get; set; }
@@ -15,6 +21,9 @@ public class Head : MonoBehaviour
 
     private void Start()
     {
+        movementSpeed = Random.Range(movementSpeedMin, movementSpeedMax);
+        rotateSpeed = Random.Range(rotateSpeedMin, rotateSpeedMax);
+        
         dragon = transform.parent.GetComponent<Dragon>();
         dragon.OnDeath += DropEdible;
         dragon.OnDeath += Destroy;

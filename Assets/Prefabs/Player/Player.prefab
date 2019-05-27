@@ -73,7 +73,6 @@ MonoBehaviour:
   deathEffect: {fileID: 6273613454123049747, guid: 797880908f4399944b61bb34c7a9d617,
     type: 3}
   dropOnDeath: {fileID: 0}
-  tails: []
 --- !u!114 &6252744935627314080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +87,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 1623989807040659304, guid: 8c044e2cfa9030d458f72a4b85e858dd,
     type: 3}
-  fireballCooldown: 1
+  fireballCooldownMin: 1.5
+  fireballCooldownMax: 1.5
 --- !u!1001 &5179720014053389625
 PrefabInstance:
   m_ObjectHideFlags: 0

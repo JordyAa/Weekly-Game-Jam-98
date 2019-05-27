@@ -60,10 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d74586a5484fecb83bd5f9d81cd486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTailSize: 10
-  tailUpgradeSize: 10
-  startTailSizeMin: 5
-  startTailSizeMax: 8
+  startTailSizeMin: 7
+  startTailSizeMax: 10
   tailPrefab: {fileID: 3717653156793699044, guid: e171d925000ace1478e76fda4ff5f876,
     type: 3}
   tailSprite: {fileID: -2564399675630157957, guid: 6e107e071add33147904244d7aeb6ab0,
@@ -92,7 +90,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 1623989807040659304, guid: 8c044e2cfa9030d458f72a4b85e858dd,
     type: 3}
-  fireballCooldown: 3
+  fireballCooldownMin: 2.75
+  fireballCooldownMax: 3.25
 --- !u!1001 &3507274016632307371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,11 +99,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 83906841091562285}
     m_Modifications:
-    - target: {fileID: 3584502000360537431, guid: 92f171a25f637294c881336c8bce5990,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy 1 Head
-      objectReference: {fileID: 0}
     - target: {fileID: 3584502000360537418, guid: 92f171a25f637294c881336c8bce5990,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -159,6 +153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584502000360537431, guid: 92f171a25f637294c881336c8bce5990,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy 1 Head
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f171a25f637294c881336c8bce5990, type: 3}

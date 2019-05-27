@@ -3,8 +3,16 @@
 public class CombatController : MonoBehaviour
 {
     [SerializeField] private GameObject fireballPrefab = null;
-    [SerializeField] private float fireballCooldown = 1f;
-    private float fireballCooldownCounter = 0f;
+    
+    [SerializeField] private float fireballCooldownMin = 1f;
+    [SerializeField] private float fireballCooldownMax = 1f;
+    private float fireballCooldown;
+    private float fireballCooldownCounter;
+
+    private void Start()
+    {
+        fireballCooldown = Random.Range(fireballCooldownMin, fireballCooldownMax);
+    }
 
     private void Update()
     {
@@ -21,7 +29,6 @@ public class CombatController : MonoBehaviour
             fireballCooldownCounter = fireballCooldown;
             Instantiate(fireballPrefab, t.position + 0.5f * t.up, t.rotation)
                 .GetComponent<Fireball>().source = name;
-            
         }
     }
 }

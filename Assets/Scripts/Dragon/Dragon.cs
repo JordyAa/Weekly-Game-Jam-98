@@ -23,7 +23,7 @@ public class Dragon : MonoBehaviour
     private bool isDestroying { get; set; }
     
     public Head head { get; private set; }
-    [HideInInspector] public List<Tail> tails = new List<Tail>();
+    public readonly List<Tail> tails = new List<Tail>();
     
     private bool _isDead;
     public bool isDead

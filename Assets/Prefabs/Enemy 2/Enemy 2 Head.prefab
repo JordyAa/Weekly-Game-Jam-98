@@ -77,6 +77,31 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: movementSpeedMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: movementSpeedMax
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: rotateSpeedMin
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: rotateSpeedMax
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235175468156203749, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: boostModifier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1235175468156203748, guid: 3f643491acb47874bad88a4530412720,
         type: 3}
       propertyPath: m_Sprite
