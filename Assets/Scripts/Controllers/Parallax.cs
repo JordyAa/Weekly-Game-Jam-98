@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using Debug = System.Diagnostics.Debug;
 
 public class Parallax : MonoBehaviour
 {
@@ -9,6 +8,11 @@ public class Parallax : MonoBehaviour
 
     private Transform cam;
 
+    private void Start()
+    {
+        bgs = GetComponentsInChildren<Transform>();
+    }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += FindCamera;
@@ -16,8 +20,11 @@ public class Parallax : MonoBehaviour
 
     private void FindCamera(Scene scene, LoadSceneMode mode)
     {
-        Debug.Assert(Camera.main != null, "Camera.main != null");
-        cam = Camera.main.transform;
+        Camera c = Camera.main;
+        if (c != null)
+        {
+            cam = c.transform;
+        }
     }
     
     private void Update()

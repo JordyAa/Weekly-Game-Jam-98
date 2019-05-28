@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     {
         if (highScoreText != null)
         {
-            highScoreText.text = "HIGH SCORE: " + AchievementController.highScore;
+            highScoreText.text = "HIGH SCORE: " + Achievements.highScore;
         }
     }
 

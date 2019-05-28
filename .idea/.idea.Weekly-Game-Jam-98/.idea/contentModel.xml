@@ -9,7 +9,7 @@
         <e p="Scripts" t="Include">
           <e p="Achievements" t="Include">
             <e p="Achievement.cs" t="Include" />
-            <e p="AchievementController.cs" t="Include" />
+            <e p="Achievements.cs" t="Include" />
             <e p="AchievementScriptable.cs" t="Include" />
           </e>
           <e p="Background.cs" t="Include" />

@@ -29,15 +29,12 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.parent.name == source) return;
+        Transform t = other.transform.parent;
+        if (t.name == source) return;
         
-        if (other.CompareTag("Head"))
+        if (other.CompareTag("Head") || other.CompareTag("Tail"))
         {
-            other.transform.parent.GetComponent<Dragon>().DestroyTail(0);
-        }
-        else if (other.CompareTag("Tail"))
-        {
-            other.transform.parent.GetComponent<Dragon>().DestroyTail(other.transform.GetSiblingIndex() - 1);
+            t.GetComponent<Dragon>().DestroyTail(other.transform.GetSiblingIndex() - 1);
         }
         
         Destroy(gameObject);

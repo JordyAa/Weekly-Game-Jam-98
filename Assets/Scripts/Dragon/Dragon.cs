@@ -20,11 +20,11 @@ public class Dragon : MonoBehaviour
     public GameObject deathEffect;
     public GameObject dropOnDeath;
     
-    
     public Head head { get; private set; }
     public readonly List<Tail> tails = new List<Tail>();
 
     private bool isDestroying;
+    
     private bool _isDead;
     public bool isDead
     {
@@ -39,6 +39,7 @@ public class Dragon : MonoBehaviour
     public event Action<Dragon> OnGrowTail = delegate { };
     public event Action<Dragon> OnDestroyTail = delegate { };
     public event Action<Dragon> OnDeath = delegate { };
+    
     private Coroutine destroyTailRoutine;
 
     private void Start()
@@ -67,14 +68,13 @@ public class Dragon : MonoBehaviour
         }
         
         GameObject go = Instantiate(tailPrefab, target.position, Quaternion.identity);
-        go.name = $"Tail ({tails.Count})";
         go.transform.parent = transform;
 
         Tail tail = go.GetComponent<Tail>();
         tail.target = target;
         tails.Add(tail);
 
-        AchievementController.highScore = tails.Count;
+        Achievements.highScore = tails.Count;
         
         if (initial == false)
         {
@@ -90,12 +90,13 @@ public class Dragon : MonoBehaviour
         }
         
         isDestroying = true;
-        destroyTailRoutine = StartCoroutine(DestroyTailRoutine(stopAt));
+        destroyTailRoutine = StartCoroutine(DestroyTailRoutine(Mathf.Max(0, stopAt)));
     }
 
     private IEnumerator DestroyTailRoutine(int stopAt)
     {
         stopAt = Mathf.Max(0, stopAt);
+        
         for (int i = tails.Count - 1; i >= stopAt; i--)
         {
             yield return new WaitForSeconds(0.08f);
@@ -112,22 +113,26 @@ public class Dragon : MonoBehaviour
             OnDestroyTail(this);
         }
         
+        CheckDeath();
+        
+        isDestroying = false;
+    }
+
+    private void CheckDeath()
+    {
         if (tails.Count <= 0)
         {
             if (transform.name == "Player")
             {
-                AchievementController.totalDeaths++;
+                Achievements.totalDeaths++;
             }
             else
             {
-                AchievementController.totalKills++;
+                Achievements.totalKills++;
             }
             
             isDead = true;
             OnDeath(this);
         }
-        
-        isDestroying = false;
-        
     }
 }

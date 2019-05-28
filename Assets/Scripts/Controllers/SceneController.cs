@@ -10,15 +10,16 @@ public class SceneController : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Dragon>();
+        player = GameObject.Find("Player").GetComponent<Dragon>();
         ui = FindObjectOfType<UIController>();
-
         isPaused = false;
     }
 
     private void Update()
     {
-        if (player.isDead == false && Input.GetKeyDown(KeyCode.Escape))
+        if (player.isDead) return;
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
         }

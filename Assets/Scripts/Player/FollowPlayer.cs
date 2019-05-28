@@ -9,9 +9,9 @@ public class FollowPlayer : MonoBehaviour
 
     private void Start()
     {
-        GameObject p = GameObject.FindGameObjectWithTag("Player");
+        GameObject p = GameObject.Find("Player");
         player = p.GetComponent<Dragon>();
-        target = p.GetComponentInChildren<Head>().transform;
+        target = p.transform.Find("Head");
     }
 
     private void Update()

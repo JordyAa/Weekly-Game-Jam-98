@@ -4,10 +4,9 @@ public class SpawnController : MonoBehaviour
 {
     [SerializeField] private int maxSpawned = 4;
     [HideInInspector] public int spawned;
-    private int total;
     
     [SerializeField] private float timeBetweenSpawns = 1f;
-    [SerializeField] private float timeUntilSpawn = 3f;
+    private float timeUntilSpawn;
     
     [SerializeField] private Transform[] spawnpoints = new Transform[0];
     [SerializeField] private GameObject[] enemies = new GameObject[0];
@@ -30,13 +29,11 @@ public class SpawnController : MonoBehaviour
         else if (spawned < maxSpawned)
         {
             Instantiate(enemies[Random.Range(0, enemies.Length)],
-                    spawnpoints[Random.Range(0, spawnpoints.Length)].position,
-                    Quaternion.identity)
-                .transform.name = $"Enemy ({total})";
+                spawnpoints[Random.Range(0, spawnpoints.Length)].position,
+                Quaternion.identity);
             
             timeUntilSpawn = timeBetweenSpawns;
             spawned++;
-            total++;
         }
     }
 }

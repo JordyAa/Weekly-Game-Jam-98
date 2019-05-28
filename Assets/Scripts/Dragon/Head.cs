@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Head : MonoBehaviour
@@ -26,39 +25,34 @@ public class Head : MonoBehaviour
 
         if (transform.parent.CompareTag("Player"))
         {
-            movementSpeed *= FindObjectOfType<AchievementController>().GetMoveModifier();
+            movementSpeed *= FindObjectOfType<Achievements>().GetMoveModifier();
         }
         
         dragon = transform.parent.GetComponent<Dragon>();
         dragon.OnDeath += DropEdible;
         dragon.OnDeath += Destroy;
     }
-    
+
     private static void DropEdible(Dragon dragon)
     {
-        if (dragon.dropOnDeath != null)
-        {
-            Instantiate(dragon.dropOnDeath,
-                dragon.head.transform.position,
-                Quaternion.identity);
-        }
+        if (dragon.dropOnDeath == null) return;
+
+        Instantiate(dragon.dropOnDeath,
+            dragon.head.transform.position,
+            Quaternion.identity);
     }
 
     private static void Destroy(Dragon dragon)
     {
         GameObject.Find("SpawnController").GetComponent<SpawnController>().spawned--;
-        Destroy(dragon.gameObject, 0.01f);
+        Destroy(dragon.gameObject);
     }
 
     private void FixedUpdate()
     {
         if (dragon == null || dragon.isDead) return;
         
-        if (Math.Abs(rotate) > Mathf.Epsilon)
-        {
-            transform.Rotate(0f, 0f, -rotate * rotateSpeed);
-        }
-        
+        transform.Rotate(0f, 0f, -rotate * rotateSpeed);
         transform.Translate(0f, (movementSpeed + boost * boostModifier) * Time.deltaTime, 0f, Space.Self);
     }
 }

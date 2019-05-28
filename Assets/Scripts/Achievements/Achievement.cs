@@ -4,9 +4,16 @@ using UnityEngine.UI;
 
 public class Achievement : MonoBehaviour
 {
-    [SerializeField] private Image icon = null;
-    [SerializeField] private TextMeshProUGUI condition = null;
-    [SerializeField] private TextMeshProUGUI reward = null;
+    private Image icon;
+    private TextMeshProUGUI condition;
+    private TextMeshProUGUI reward;
+
+    private void Start()
+    {
+        icon = transform.Find("Icon").GetComponent<Image>();
+        condition = transform.Find("Condition").GetComponent<TextMeshProUGUI>();
+        reward = transform.Find("Reward").GetComponent<TextMeshProUGUI>();
+    }
 
     public void Init(AchievementScriptable achievement)
     {

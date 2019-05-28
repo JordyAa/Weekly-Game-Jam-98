@@ -15,9 +15,10 @@ public class CombatController : MonoBehaviour
     private void Start()
     {
         fireballCooldown = Random.Range(fireballCooldownMin, fireballCooldownMax);
+        
         if (transform.CompareTag("Player"))
         {
-            AchievementController ac = FindObjectOfType<AchievementController>();
+            Achievements ac = FindObjectOfType<Achievements>();
             fireballCooldown *= ac.GetCooldownModifier();
             projectiles = ac.GetProjectiles();
         }
@@ -49,7 +50,7 @@ public class CombatController : MonoBehaviour
 
             if (transform.CompareTag("Player"))
             {
-                AchievementController.shotsFired++;
+                Achievements.shotsFired++;
             }
         }
     }

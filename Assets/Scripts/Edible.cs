@@ -20,9 +20,10 @@ public class Edible : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.parent.CompareTag("Player"))
+        Transform t = other.transform.parent;
+        if (t.CompareTag("Player"))
         {
-            GameObject.Find("Player").GetComponent<Dragon>().GrowTail();
+            t.GetComponent<Dragon>().GrowTail();
             Instantiate(consumeEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

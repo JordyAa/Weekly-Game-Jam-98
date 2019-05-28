@@ -1,29 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class AchievementController : MonoBehaviour
+public class Achievements : MonoBehaviour
 {
     [SerializeField] private Transform achievementHolder = null;
     [SerializeField] private GameObject achievementPrefab = null;
     [SerializeField] private AchievementScriptable[] achievements = new AchievementScriptable[0];
-    
-    private void Start()
-    {
-        if (achievementHolder == null) return;
-        
-        foreach (AchievementScriptable achievement in achievements)
-        {
-            GameObject go = Instantiate(achievementPrefab, achievementHolder);
-            go.GetComponent<Achievement>().Init(achievement);
-
-            if (shotsFired >= achievement.shotsRequired &&
-                totalKills >= achievement.killsRequired &&
-                totalDeaths >= achievement.deathsRequired)
-            {
-                go.transform.GetChild(0).GetComponent<Image>().color = Color.white;
-            }
-        }
-    }
     
     public static int highScore
     {
@@ -49,6 +31,22 @@ public class AchievementController : MonoBehaviour
         set => PlayerPrefs.SetInt("totalDeaths", value);
     }
 
+    private void Start()
+    {
+        if (achievementHolder == null) return;
+        
+        foreach (AchievementScriptable achievement in achievements)
+        {
+            GameObject go = Instantiate(achievementPrefab, achievementHolder);
+            go.GetComponent<Achievement>().Init(achievement);
+            
+            if (AchievementScriptable.Unlocked(achievement))
+            {
+                go.transform.GetChild(0).GetComponent<Image>().color = Color.white;
+            }
+        }
+    }
+    
     public int GetProjectiles()
     {
         int shots = shotsFired;
