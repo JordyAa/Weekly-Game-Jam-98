@@ -8,12 +8,15 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        highScoreText.text = "HIGH SCORE: " + StatsController.highScore;
+        if (highScoreText != null)
+        {
+            highScoreText.text = "HIGH SCORE: " + AchievementController.highScore;
+        }
     }
 
-    public void StartGame()
+    public void LoadScene(int buildIndex)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(buildIndex);
     }
 
     public void QuitGame()

@@ -23,6 +23,11 @@ public class Head : MonoBehaviour
     {
         movementSpeed = Random.Range(movementSpeedMin, movementSpeedMax);
         rotateSpeed = Random.Range(rotateSpeedMin, rotateSpeedMax);
+
+        if (transform.parent.CompareTag("Player"))
+        {
+            movementSpeed *= FindObjectOfType<AchievementController>().GetMoveModifier();
+        }
         
         dragon = transform.parent.GetComponent<Dragon>();
         dragon.OnDeath += DropEdible;
@@ -47,7 +52,7 @@ public class Head : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (dragon.isDead) return;
+        if (dragon == null || dragon.isDead) return;
         
         if (Math.Abs(rotate) > Mathf.Epsilon)
         {

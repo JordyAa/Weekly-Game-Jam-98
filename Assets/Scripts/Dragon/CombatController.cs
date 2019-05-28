@@ -9,9 +9,18 @@ public class CombatController : MonoBehaviour
     private float fireballCooldown;
     private float fireballCooldownCounter;
 
+    [SerializeField] private float bulletSpread = 90f;
+    private int projectiles = 1;
+
     private void Start()
     {
         fireballCooldown = Random.Range(fireballCooldownMin, fireballCooldownMax);
+        if (transform.CompareTag("Player"))
+        {
+            AchievementController ac = FindObjectOfType<AchievementController>();
+            fireballCooldown *= ac.GetCooldownModifier();
+            projectiles = ac.GetProjectiles();
+        }
     }
 
     private void Update()
@@ -27,8 +36,21 @@ public class CombatController : MonoBehaviour
         if (fireballCooldownCounter <= 0f)
         {
             fireballCooldownCounter = fireballCooldown;
-            Instantiate(fireballPrefab, t.position + 0.5f * t.up, t.rotation)
-                .GetComponent<Fireball>().source = name;
+            
+            for (int i = 1; i < projectiles + 1; i++)
+            {
+                float angleOffset = (float) i / (projectiles + 1) * bulletSpread - bulletSpread / 2f;
+
+                Instantiate(fireballPrefab,
+                        t.position + 0.3f * t.up,
+                        t.rotation * Quaternion.Euler(0f, 0f, angleOffset))
+                    .GetComponent<Fireball>().source = name;
+            }
+
+            if (transform.CompareTag("Player"))
+            {
+                AchievementController.shotsFired++;
+            }
         }
     }
 }

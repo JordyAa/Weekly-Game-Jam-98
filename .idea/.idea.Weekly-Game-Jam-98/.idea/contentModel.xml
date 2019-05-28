@@ -7,6 +7,11 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Achievements" t="Include">
+            <e p="Achievement.cs" t="Include" />
+            <e p="AchievementController.cs" t="Include" />
+            <e p="AchievementScriptable.cs" t="Include" />
+          </e>
           <e p="Background.cs" t="Include" />
           <e p="Controllers" t="Include">
             <e p="AudioController.cs" t="Include" />
@@ -31,7 +36,6 @@
           <e p="Player" t="Include">
             <e p="FollowPlayer.cs" t="Include" />
             <e p="InputController.cs" t="Include" />
-            <e p="StatsController.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">
@@ -60,7 +64,9 @@
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
       <e p="Weekly-Game-Jam-98.sln" t="IncludeFlat" />
     </e>
   </component>

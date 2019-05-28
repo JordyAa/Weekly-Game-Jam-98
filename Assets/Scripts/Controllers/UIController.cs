@@ -8,7 +8,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject continueText = null;
     [SerializeField] private GameObject restartText = null;
     [SerializeField] private GameObject menuText = null;
-
+    
     private void Start()
     {
         Dragon player = GameObject.Find("Player").GetComponent<Dragon>();
@@ -22,7 +22,7 @@ public class UIController : MonoBehaviour
     private void UpdateStats(Dragon player)
     {
         lengthText.text = "LENGTH: " + player.tails.Count;
-        highScoreText.text = "HIGH SCORE: " + StatsController.highScore;
+        highScoreText.text = "HIGH SCORE: " + AchievementController.highScore;
     }
 
     private void EnableRestart(Dragon player)

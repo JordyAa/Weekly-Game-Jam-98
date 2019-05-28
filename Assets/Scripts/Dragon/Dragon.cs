@@ -74,6 +74,8 @@ public class Dragon : MonoBehaviour
         tail.target = target;
         tails.Add(tail);
 
+        AchievementController.highScore = tails.Count;
+        
         if (initial == false)
         {
             OnGrowTail(this);
@@ -112,6 +114,15 @@ public class Dragon : MonoBehaviour
         
         if (tails.Count <= 0)
         {
+            if (transform.name == "Player")
+            {
+                AchievementController.totalDeaths++;
+            }
+            else
+            {
+                AchievementController.totalKills++;
+            }
+            
             isDead = true;
             OnDeath(this);
         }
