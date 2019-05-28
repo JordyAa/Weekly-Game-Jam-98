@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class InputController : MonoBehaviour
+public class KeyboardController : MonoBehaviour
 {
     private Head head;
     private Dragon player;

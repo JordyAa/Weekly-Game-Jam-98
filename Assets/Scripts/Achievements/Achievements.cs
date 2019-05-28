@@ -38,7 +38,7 @@ public class Achievements : MonoBehaviour
         foreach (AchievementScriptable achievement in achievements)
         {
             GameObject go = Instantiate(achievementPrefab, achievementHolder);
-            go.GetComponent<Achievement>().Init(achievement);
+            go.GetComponent<Achievement>().Set(achievement);
             
             if (AchievementScriptable.Unlocked(achievement))
             {
