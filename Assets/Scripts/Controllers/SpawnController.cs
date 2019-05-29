@@ -8,8 +8,16 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private float timeBetweenSpawns = 1f;
     private float timeUntilSpawn;
     
+    [SerializeField] private int maxAsteroids = 2;
+    [HideInInspector] public int asteroids;
+    
+    [SerializeField] private float timeBetweenAsteroids = 1f;
+    private float timeUntilAsteroid;
+    
     [SerializeField] private Transform[] spawnpoints = new Transform[0];
+    
     [SerializeField] private GameObject[] enemies = new GameObject[0];
+    [SerializeField] private GameObject asteroid = null;
     
     private Dragon player;
 
@@ -22,6 +30,12 @@ public class SpawnController : MonoBehaviour
     {
         if (player.isDead) return;
         
+        SpawnDragon();
+        SpawnAsteroid();
+    }
+
+    private void SpawnDragon()
+    {
         if (timeUntilSpawn > 0f)
         {
             timeUntilSpawn -= Time.deltaTime;
@@ -33,6 +47,23 @@ public class SpawnController : MonoBehaviour
                 Quaternion.identity);
             
             timeUntilSpawn = timeBetweenSpawns;
+            spawned++;
+        }
+    }
+
+    private void SpawnAsteroid()
+    {
+        if (timeUntilAsteroid > 0f)
+        {
+            timeUntilAsteroid -= Time.deltaTime;
+        }
+        else if (asteroids < maxAsteroids)
+        {
+            Instantiate(asteroid,
+                spawnpoints[Random.Range(0, spawnpoints.Length)].position,
+                Quaternion.identity);
+            
+            timeUntilAsteroid = timeBetweenAsteroids;
             spawned++;
         }
     }

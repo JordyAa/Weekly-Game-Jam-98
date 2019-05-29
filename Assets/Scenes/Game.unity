@@ -3543,6 +3543,9 @@ MonoBehaviour:
   maxSpawned: 4
   spawned: 0
   timeBetweenSpawns: 5
+  maxAsteroids: 2
+  asteroids: 0
+  timeBetweenAsteroids: 10
   spawnpoints:
   - {fileID: 58796963}
   - {fileID: 996488795}
@@ -3551,6 +3554,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 83906841091562291, guid: 3a606991a30f4dd4f8db86bdfb670b71, type: 3}
   - {fileID: 83906841091562291, guid: 385539ff00c49ff4fbc23dbbc832468f, type: 3}
+  asteroid: {fileID: 2182845659762626232, guid: c80903d73f6f15043b2d7106d7172e68,
+    type: 3}
 --- !u!114 &1698585482
 MonoBehaviour:
   m_ObjectHideFlags: 0

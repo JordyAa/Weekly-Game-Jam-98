@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Aalde\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Aalde\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Weekly-Game-Jam-98.1468305684.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Aalde\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Aalde\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Weekly-Game-Jam-98.1468305684.00" t="ExcludeRecursive" />
     <e p="C:\Users\Aalde\Documents\Unity3D\Weekly-Game-Jam-98" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -12,6 +12,7 @@
             <e p="Achievements.cs" t="Include" />
             <e p="AchievementScriptable.cs" t="Include" />
           </e>
+          <e p="Asteroid.cs" t="Include" />
           <e p="Background.cs" t="Include" />
           <e p="Controllers" t="Include">
             <e p="AudioController.cs" t="Include" />
@@ -61,12 +62,9 @@
           </e>
         </e>
       </e>
-      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Weekly-Game-Jam-98.sln" t="IncludeFlat" />
     </e>
   </component>
