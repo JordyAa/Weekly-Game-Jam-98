@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Edible : MonoBehaviour
 {
@@ -18,7 +20,7 @@ public class Edible : MonoBehaviour
         transform.Rotate(0f, 0f, -rotate);
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Transform t = other.transform.parent;
         if (t.CompareTag("Player"))
@@ -27,5 +29,10 @@ public class Edible : MonoBehaviour
             Instantiate(consumeEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter()
+    {
+        Destroy(gameObject);
     }
 }

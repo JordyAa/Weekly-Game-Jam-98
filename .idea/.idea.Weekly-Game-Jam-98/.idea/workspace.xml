@@ -50,18 +50,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Fireball.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="736">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
               <folding>
-                <marker date="1559125472099" expanded="false" signature="6:32" ph="..." />
-                <marker date="1559125472099" expanded="true" signature="71:1093" ph="{...}" />
-                <marker date="1559125472099" expanded="true" signature="237:421" ph="{...}" />
-                <marker date="1559125472099" expanded="true" signature="287:415" ph="{...}" />
-                <marker date="1559125472099" expanded="true" signature="447:498" ph="{...}" />
-                <marker date="1559125472099" expanded="true" signature="530:623" ph="{...}" />
-                <marker date="1559125472099" expanded="true" signature="676:994" ph="{...}" />
-                <marker date="1559125472099" expanded="true" signature="841:950" ph="{...}" />
-                <marker date="1559125472099" expanded="true" signature="1050:1091" ph="{...}" />
+                <marker date="1559125848072" expanded="false" signature="6:32" ph="..." />
+                <marker date="1559125848072" expanded="true" signature="71:1076" ph="{...}" />
+                <marker date="1559125848072" expanded="true" signature="237:421" ph="{...}" />
+                <marker date="1559125848072" expanded="true" signature="287:415" ph="{...}" />
+                <marker date="1559125848072" expanded="true" signature="447:498" ph="{...}" />
+                <marker date="1559125848072" expanded="true" signature="530:623" ph="{...}" />
+                <marker date="1559125848072" expanded="true" signature="676:994" ph="{...}" />
+                <marker date="1559125848072" expanded="true" signature="841:950" ph="{...}" />
+                <marker date="1559125848072" expanded="true" signature="1033:1074" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -284,12 +284,12 @@
       <workItem from="1558986216975" duration="1926000" />
       <workItem from="1559032289655" duration="7277000" />
       <workItem from="1559053134792" duration="3202000" />
-      <workItem from="1559123686003" duration="1786000" />
+      <workItem from="1559123686003" duration="2162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78473000" />
+    <option name="totallyTimeSpent" value="78849000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -704,18 +704,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Fireball.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="736">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
           <folding>
-            <marker date="1559125472099" expanded="false" signature="6:32" ph="..." />
-            <marker date="1559125472099" expanded="true" signature="71:1093" ph="{...}" />
-            <marker date="1559125472099" expanded="true" signature="237:421" ph="{...}" />
-            <marker date="1559125472099" expanded="true" signature="287:415" ph="{...}" />
-            <marker date="1559125472099" expanded="true" signature="447:498" ph="{...}" />
-            <marker date="1559125472099" expanded="true" signature="530:623" ph="{...}" />
-            <marker date="1559125472099" expanded="true" signature="676:994" ph="{...}" />
-            <marker date="1559125472099" expanded="true" signature="841:950" ph="{...}" />
-            <marker date="1559125472099" expanded="true" signature="1050:1091" ph="{...}" />
+            <marker date="1559125848072" expanded="false" signature="6:32" ph="..." />
+            <marker date="1559125848072" expanded="true" signature="71:1076" ph="{...}" />
+            <marker date="1559125848072" expanded="true" signature="237:421" ph="{...}" />
+            <marker date="1559125848072" expanded="true" signature="287:415" ph="{...}" />
+            <marker date="1559125848072" expanded="true" signature="447:498" ph="{...}" />
+            <marker date="1559125848072" expanded="true" signature="530:623" ph="{...}" />
+            <marker date="1559125848072" expanded="true" signature="676:994" ph="{...}" />
+            <marker date="1559125848072" expanded="true" signature="841:950" ph="{...}" />
+            <marker date="1559125848072" expanded="true" signature="1033:1074" ph="{...}" />
           </folding>
         </state>
       </provider>
