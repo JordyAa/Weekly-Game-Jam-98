@@ -31,7 +31,7 @@ public class Edible : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter()
+    private void OnCollisionEnter2D()
     {
         Destroy(gameObject);
     }

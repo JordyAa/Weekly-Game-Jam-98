@@ -47,6 +47,8 @@ public class Dragon : MonoBehaviour
         EffectController.Init(this);
         head = GetComponentInChildren<Head>();
 
+        OnGrowTail += AudioController.instance.PlayGrow;
+
         int size = Random.Range(startTailSizeMin, startTailSizeMax + 1);
         for (int i = 0; i < size; i++)
         {

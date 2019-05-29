@@ -19,6 +19,7 @@ public class Fireball : MonoBehaviour
 
     private void Start()
     {
+        AudioController.instance.PlayFireball();
         Destroy(gameObject, lifeTime);
     }
 
@@ -37,11 +38,13 @@ public class Fireball : MonoBehaviour
             t.GetComponent<Dragon>().DestroyTail(other.transform.GetSiblingIndex() - 1);
         }
         
+        AudioController.instance.PlayExplosion();
         Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D()
     {
+        AudioController.instance.PlayExplosion();
         Destroy(gameObject);
     }
 }
