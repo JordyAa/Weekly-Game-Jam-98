@@ -3403,9 +3403,9 @@ MonoBehaviour:
   maxSpawned: 4
   spawned: 0
   timeBetweenSpawns: 5
-  maxAsteroids: 2
+  maxAsteroids: 4
   asteroids: 0
-  timeBetweenAsteroids: 10
+  timeBetweenAsteroids: 6
   spawnpoints:
   - {fileID: 58796963}
   - {fileID: 996488795}
@@ -4464,16 +4464,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6252744935627314109, guid: 42fa19468ccd9c548a75a19385887433,
-        type: 3}
-      propertyPath: startTailSizeMin
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6252744935627314109, guid: 42fa19468ccd9c548a75a19385887433,
-        type: 3}
-      propertyPath: startTailSizeMax
-      value: 50
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6766956172202321170, guid: 42fa19468ccd9c548a75a19385887433, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42fa19468ccd9c548a75a19385887433, type: 3}

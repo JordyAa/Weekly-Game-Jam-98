@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fovRadius: 5
   fovDistance: 10
+  maxDistance: 30
 --- !u!114 &83906841091562290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +93,7 @@ MonoBehaviour:
     type: 3}
   fireballCooldownMin: 2.75
   fireballCooldownMax: 3.25
+  bulletSpread: 90
 --- !u!1001 &3987287701469688550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99,6 +101,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 83906841091562285}
     m_Modifications:
+    - target: {fileID: 3584502000360537431, guid: 24ed11ac2ba33bf40a4a1bfc2f74c5a6,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy 2 Head
+      objectReference: {fileID: 0}
     - target: {fileID: 3584502000360537418, guid: 24ed11ac2ba33bf40a4a1bfc2f74c5a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -154,10 +161,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3584502000360537431, guid: 24ed11ac2ba33bf40a4a1bfc2f74c5a6,
+    - target: {fileID: 3584502000360537429, guid: 24ed11ac2ba33bf40a4a1bfc2f74c5a6,
         type: 3}
-      propertyPath: m_Name
-      value: Enemy 2 Head
+      propertyPath: m_Size.x
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584502000360537429, guid: 24ed11ac2ba33bf40a4a1bfc2f74c5a6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.84
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24ed11ac2ba33bf40a4a1bfc2f74c5a6, type: 3}

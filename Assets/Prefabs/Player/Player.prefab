@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6252744935627314082}
   - component: {fileID: 6252744935627314083}
-  - component: {fileID: 6766956172202321170}
   - component: {fileID: 6252744935627314109}
   - component: {fileID: 6252744935627314080}
   m_Layer: 0
@@ -45,18 +44,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61d1e93b688180f47be61885da6f273d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6766956172202321170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6252744935627314108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917872db5f3b2aa44a86ecaa809ebe28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6252744935627314109
@@ -102,6 +89,7 @@ MonoBehaviour:
     type: 3}
   fireballCooldownMin: 1.5
   fireballCooldownMax: 1.5
+  bulletSpread: 90
 --- !u!1001 &5179720014053389625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109,6 +97,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6252744935627314082}
     m_Modifications:
+    - target: {fileID: 1235175468156203750, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: m_Name
+      value: Head
+      objectReference: {fileID: 0}
     - target: {fileID: 1235175468156203771, guid: 3f643491acb47874bad88a4530412720,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -164,11 +157,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1235175468156203750, guid: 3f643491acb47874bad88a4530412720,
-        type: 3}
-      propertyPath: m_Name
-      value: Head
-      objectReference: {fileID: 0}
     - target: {fileID: 1235175468156203770, guid: 3f643491acb47874bad88a4530412720,
         type: 3}
       propertyPath: m_Constraints
@@ -183,6 +171,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235175468156203748, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235175468156203748, guid: 3f643491acb47874bad88a4530412720,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.84
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7638275252783268817, guid: 3f643491acb47874bad88a4530412720, type: 3}

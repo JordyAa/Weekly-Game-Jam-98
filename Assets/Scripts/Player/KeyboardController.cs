@@ -5,7 +5,7 @@ public class KeyboardController : MonoBehaviour
     private Head head;
     private Dragon player;
     private CombatController combat;
-    
+
     private void Start()
     {
         head = GetComponentInChildren<Head>();
