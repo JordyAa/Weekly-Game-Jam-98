@@ -525,7 +525,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScoreText: {fileID: 558806094}
-  musicSource: {fileID: 788742589}
   toggleImage: {fileID: 1358392566}
   muteIcon: {fileID: 21300000, guid: f86765fcbe7b823428d4ddd2dfede182, type: 3}
   unmuteIcon: {fileID: 21300000, guid: 88cfb84855faddf4a97ae74c7d2aa00d, type: 3}
@@ -1216,7 +1215,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: GAME TITLE
+  m_text: WYVERN WARFARE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a55df19a59fa8d14e98804fda517d132, type: 2}
   m_sharedMaterial: {fileID: 5812734912460515948, guid: a55df19a59fa8d14e98804fda517d132,
@@ -1286,7 +1285,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 350998316}
-    characterCount: 10
+    characterCount: 14
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
