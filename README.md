@@ -1,4 +1,4 @@
-# Weekly Game Jam - Week 98
+# Weekly Game Jam 98
 Theme: 'Tame a Dragon'
 
 # Built With
