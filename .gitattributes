@@ -1,7 +1,7 @@
 # Unity
-*.cginc  text
 *.cs     text diff=csharp
-*.shader text
+*.cginc  text diff=csharp linguist-language=csharp
+*.shader text diff=csharp linguist-language=csharp
 
 # Unity YAML
 *.mat    merge=unityyamlmerge eol=lf
@@ -116,5 +116,3 @@
 *.meta   linguist-generated
 *.prefab linguist-generated
 *.unity  linguist-generated
-
-Assets/TextMesh[[:space:]]Pro/* -linguist-vendored
